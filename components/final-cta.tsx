@@ -7,6 +7,7 @@ const WHATSAPP = "https://wa.me/972555648222"
 export function FinalCta() {
   return (
     <section id="contact" className="relative scroll-mt-24 overflow-hidden py-32 md:py-48">
+      {/* Always dark — the closing statement reads the same in both themes */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,#0f1011,#131d27_45%,#1a4788_100%)]"
@@ -26,13 +27,18 @@ export function FinalCta() {
           שיחת היכרות קצרה ב־WhatsApp. נחזור אליכם תוך דקות — ללא התחייבות, והייעוץ הראשוני עלינו.
         </p>
         <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
-          <Button asChild size="lg" className="w-full sm:w-auto">
+          <Button asChild size="lg" className="w-full bg-pure text-void hover:bg-cloud sm:w-auto">
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
               <MessageCircle />
               פתחו WhatsApp
             </a>
           </Button>
-          <Button asChild size="lg" variant="ghost" className="w-full sm:w-auto">
+          <Button
+            asChild
+            size="lg"
+            variant="ghost"
+            className="w-full border-pure/60 text-pure hover:bg-pure/10 sm:w-auto"
+          >
             <a href="tel:0555648222">
               <Phone />
               <span className="ltr font-mono tabular-nums">055-564-8222</span>

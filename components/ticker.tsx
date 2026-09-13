@@ -1,7 +1,7 @@
 const ITEMS = [
   "מענה תוך 1.2 שניות",
   "24/7",
-  "עברית + English",
+  "כל שפה",
   "Google Calendar",
   "WhatsApp Business",
   "זיהוי מקרי חירום",
@@ -15,12 +15,12 @@ export function Ticker() {
   return (
     <div
       aria-hidden
-      className="relative overflow-hidden border-y border-pure/8 bg-abyss py-4
+      className="relative overflow-hidden border-y border-line bg-canvas-alt py-4
       [mask-image:linear-gradient(to_left,transparent,#000_12%,#000_88%,transparent)]"
     >
       <div className="animate-marquee flex w-max gap-10 whitespace-nowrap" style={{ direction: "ltr" }}>
         {row.map((t, i) => (
-          <span key={i} className="mono-label flex items-center gap-10 text-ash">
+          <span key={i} className="mono-label flex items-center gap-10 text-muted">
             <span dir="rtl">{t}</span>
             <span className="size-1 rounded-full bg-iris-gleam" />
           </span>

@@ -10,28 +10,28 @@ export function Hero() {
       {/* Grid BG */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 h-[720px] opacity-60
-        bg-[linear-gradient(to_right,#2e2e2e_1px,transparent_1px),linear-gradient(to_bottom,#2e2e2e_1px,transparent_1px)]
+        className="absolute inset-0 -z-10 h-[720px] opacity-70
+        bg-[linear-gradient(to_right,var(--c-grid)_1px,transparent_1px),linear-gradient(to_bottom,var(--c-grid)_1px,transparent_1px)]
         bg-[size:6rem_5rem]
         [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_50%,transparent_100%)]"
       />
-      {/* Iris glow behind the call card (left side in RTL) */}
+      {/* Iris glow behind the call card */}
       <div
         aria-hidden
-        className="absolute left-[-10%] top-[20%] -z-10 h-[620px] w-[620px] rounded-full bg-iris-gleam/20 blur-[140px]"
+        className="absolute left-[-10%] top-[20%] -z-10 h-[620px] w-[620px] rounded-full bg-[var(--c-glow)] blur-[140px]"
       />
 
       <div className="container-page grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-8">
         {/* Copy */}
         <div className="flex flex-col items-start gap-8 lg:col-span-7">
-          <span className="animate-fade-in mono-label flex items-center gap-3 text-ash opacity-0">
+          <span className="animate-fade-in mono-label flex items-center gap-3 text-muted opacity-0">
             <span aria-hidden className="animate-pulse-dot size-2 rounded-full bg-cyan-signal" />
-            AI Receptionist · עברית / English
+            AI Receptionist · בכל שפה
           </span>
 
           <h1
             className="animate-fade-in delay-100 display-serif text-balance
-            bg-gradient-to-bl from-pure from-45% to-pure/40 bg-clip-text
+            bg-gradient-to-bl from-ink from-45% to-ink/40 bg-clip-text
             text-[52px] leading-[1.0] text-transparent opacity-0 sm:text-7xl lg:text-[88px] xl:text-display"
           >
             הטלפון מצלצל.
@@ -39,8 +39,8 @@ export function Hero() {
             <span className="italic">קולי</span> כבר ענתה.
           </h1>
 
-          <p className="animate-fade-in delay-200 max-w-xl text-balance font-light text-subheading text-ash opacity-0 md:text-xl">
-            רצפציה מבוססת בינה מלאכותית שמדברת עברית ואנגלית, קובעת תורים ישירות ביומן, מזהה מקרים דחופים
+          <p className="animate-fade-in delay-200 max-w-xl text-balance font-light text-subheading text-muted opacity-0 md:text-xl">
+            רצפציה מבוססת בינה מלאכותית שמדברת בכל שפה, קובעת תורים ישירות ביומן, מזהה מקרים דחופים
             ומעדכנת את הצוות — עשרים וארבע שעות ביממה, בלי לשכור אף אחד.
           </p>
 
@@ -59,7 +59,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <ul className="animate-fade-in delay-500 flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-fog opacity-0">
+          <ul className="animate-fade-in delay-500 flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-faint opacity-0">
             <li>ללא התחייבות</li>
             <li>ייעוץ ראשוני חינם</li>
             <li>מענה תוך דקות</li>

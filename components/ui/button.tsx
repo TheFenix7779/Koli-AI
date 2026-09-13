@@ -4,14 +4,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-sans text-base font-normal transition-[background-color,opacity,transform] duration-200 ease-out cursor-pointer select-none touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pure/70 focus-visible:ring-offset-2 focus-visible:ring-offset-obsidian disabled:pointer-events-none disabled:opacity-40 active:scale-[0.98] [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-sans text-base font-normal transition-[background-color,opacity,transform,border-color] duration-200 ease-out cursor-pointer select-none touch-manipulation focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-40 active:scale-[0.98] [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-pure text-void hover:bg-cloud",
-        ghost: "bg-transparent border border-pure text-pure hover:bg-pure/8",
-        glass: "bg-pure/10 border border-pure/25 text-pure backdrop-blur-xl hover:bg-pure/15",
-        link: "text-pure underline-offset-4 hover:underline",
+        default: "bg-action text-action-ink hover:opacity-90",
+        ghost: "bg-transparent border border-line-2 text-ink hover:bg-surface-2",
+        glass: "bg-ink/10 border border-line-2 text-ink backdrop-blur-xl hover:bg-ink/15",
+        link: "text-ink underline-offset-4 hover:underline",
       },
       size: {
         default: "min-h-11 px-[18px] py-3",

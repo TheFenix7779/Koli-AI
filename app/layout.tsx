@@ -26,8 +26,10 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "קולי AI — הרצפציה הדיגיטלית שעובדת 24/7",
   description:
-    "מוקד קבלה דיגיטלי מבוסס AI שמדבר עברית ואנגלית, מזמן תורים ועונה ללקוחות 24/7. מושלם למרפאות וקליניקות.",
+    "מוקד קבלה דיגיטלי מבוסס AI שמדבר בכל שפה, מזמן תורים ועונה ללקוחות 24/7. מושלם למרפאות, קליניקות ועסקי שירות.",
 }
+
+const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem('koli-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='dark'}})()`
 
 export default function RootLayout({
   children,
@@ -36,8 +38,13 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
+      data-theme="dark"
+      suppressHydrationWarning
       className={`${frank.variable} ${heebo.variable} ${robotoMono.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="min-h-dvh">{children}</body>
     </html>
   )

@@ -10,7 +10,7 @@ const INDUSTRIES = [
     id: "dental",
     icon: Smile,
     name: "מרפאות שיניים",
-    tagline: "תורים, תזכורות, ושאלות על טיפולים — בלי להוריד את הכפפות.",
+    tagline: "תורים, תזכורות ושאלות על טיפולים — בלי להוריד את הכפפות.",
     asks: ["לקבוע ניקוי אבנית", "כמה עולה הלבנה?", "יש לי כאב, מה עושים?"],
     reply: "יש לי זמינות לניקוי אבנית ביום שלישי ב־14:30. לרשום אותך?",
   },
@@ -19,7 +19,7 @@ const INDUSTRIES = [
     icon: Stethoscope,
     name: "קליניקות רפואיות",
     tagline: "מיון פניות, קביעת תורים והפניה לרופא הנכון — כבר מהשיחה הראשונה.",
-    asks: ["תור לרופא עור", "האם אתם עובדים עם הקופה שלי?", "צריך אישור מחלה"],
+    asks: ["תור לרופא עור", "האם אתם עובדים עם הקופה שלי?", "Можно записаться?"],
     reply: "אפנה אותך לד״ר כהן. הפנוי הקרוב הוא יום רביעי ב־11:00. מתאים?",
   },
   {
@@ -27,7 +27,7 @@ const INDUSTRIES = [
     icon: Sparkles,
     name: "אסתטיקה וספא",
     tagline: "הזמנת טיפולים, מחירון וזמינות — בטון רגוע, גם כשהעומס לא.",
-    asks: ["לקבוע טיפול פנים", "מה כולל חבילת הזוגי?", "יש מקום היום?"],
+    asks: ["לקבוע טיפול פנים", "מה כולל הזוגי?", "יש מקום היום?"],
     reply: "טיפול פנים קלאסי נמשך כשעה. יש לי מקום היום ב־17:00 או מחר ב־10:30.",
   },
   {
@@ -35,7 +35,7 @@ const INDUSTRIES = [
     icon: Scale,
     name: "משרדי עורכי דין",
     tagline: "מיון לידים וקביעת פגישות ראשוניות — דיסקרטי, מדויק, מתועד.",
-    asks: ["ייעוץ בנושא דיני עבודה", "כמה עולה פגישת ייעוץ?", "אפשר לדבר עם עו״ד?"],
+    asks: ["ייעוץ בדיני עבודה", "כמה עולה פגישת ייעוץ?", "אפשר לדבר עם עו״ד?"],
     reply: "אשמח לתאם פגישת היכרות עם עו״ד המתמחה בדיני עבודה. יום חמישי ב־13:00 נוח?",
   },
   {
@@ -43,7 +43,7 @@ const INDUSTRIES = [
     icon: Building2,
     name: "סוכנויות נדל״ן",
     tagline: "מענה מיידי ללידים נכנסים ותיאום ביקורים — לפני שהם מתקשרים למתחרה.",
-    asks: ["הדירה ברחוב הרצל עוד זמינה?", "לתאם סיור בנכס", "מה המחיר המבוקש?"],
+    asks: ["הדירה ברחוב הרצל זמינה?", "Can I schedule a viewing?", "מה המחיר המבוקש?"],
     reply: "הנכס עדיין זמין. אפשר לתאם סיור מחר ב־16:00 עם הסוכן האחראי. לרשום?",
   },
   {
@@ -61,14 +61,14 @@ export function Industries() {
   const current = INDUSTRIES.find((i) => i.id === active)!
 
   return (
-    <section id="industries" className="scroll-mt-24 bg-abyss py-28 md:py-40">
+    <section id="industries" className="scroll-mt-24 py-28 md:py-40">
       <div className="container-page">
         <Reveal className="mb-14 flex flex-col gap-4">
-          <span className="mono-label text-ash">למי זה מתאים</span>
-          <h2 className="display-serif max-w-3xl text-balance text-[40px] leading-[1.02] text-cloud sm:text-6xl">
+          <span className="mono-label text-muted">למי זה מתאים</span>
+          <h2 className="display-serif max-w-3xl text-balance text-[40px] leading-[1.02] text-ink sm:text-6xl">
             לעסקים שהטלפון אצלם
             <br />
-            <span className="italic">לא מפסיק לצלצל.</span>
+            <span className="italic text-accent">לא מפסיק לצלצל.</span>
           </h2>
         </Reveal>
 
@@ -88,8 +88,8 @@ export function Industries() {
                   className={cn(
                     "flex min-h-14 shrink-0 cursor-pointer items-center gap-3 rounded-cards border px-5 text-start text-body transition-colors duration-200",
                     selected
-                      ? "border-pure bg-pure text-void"
-                      : "border-pure/8 bg-obsidian text-cloud hover:border-pure/25 hover:bg-graphite/60"
+                      ? "border-transparent bg-action text-action-ink"
+                      : "border-line bg-surface text-ink-2 hover:border-line-2 hover:bg-surface-2"
                   )}
                 >
                   <Icon className="size-5 shrink-0" />
@@ -105,28 +105,32 @@ export function Industries() {
             id={`panel-${current.id}`}
             aria-labelledby={`tab-${current.id}`}
             key={current.id}
-            className="animate-msg-in flex flex-col gap-10 rounded-tiles bg-graphite p-8 opacity-0 md:p-12 lg:col-span-8"
+            className="animate-msg-in flex flex-col gap-10 rounded-tiles border border-line bg-surface p-8 opacity-0 md:p-12 lg:col-span-8"
           >
             <div className="flex flex-col gap-3">
-              <h3 className="display-serif text-[32px] leading-tight text-pure md:text-heading-lg">{current.name}</h3>
-              <p className="max-w-xl font-light text-subheading text-ash">{current.tagline}</p>
+              <h3 className="display-serif text-[32px] leading-tight text-ink md:text-heading-lg">{current.name}</h3>
+              <p className="max-w-xl font-light text-subheading text-muted">{current.tagline}</p>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <div className="flex flex-col gap-4">
-                <span className="mono-label text-fog">מה הלקוחות שואלים</span>
+                <span className="mono-label text-faint">מה הלקוחות שואלים</span>
                 <ul className="flex flex-col gap-2">
                   {current.asks.map((a) => (
-                    <li key={a} className="w-fit rounded-2xl rounded-tr-md bg-pure/8 px-4 py-2.5 text-body-sm text-cloud">
+                    <li
+                      key={a}
+                      dir="auto"
+                      className="w-fit rounded-2xl rounded-tr-md bg-surface-3 px-4 py-2.5 text-body-sm text-ink-2"
+                    >
                       {a}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="flex flex-col gap-4">
-                <span className="mono-label text-fog">איך קולי עונה</span>
-                <div className="ms-auto w-fit rounded-2xl rounded-tl-md bg-pure px-5 py-4 text-body text-void">
-                  <span className="mb-1.5 flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.15em] text-void/55">
+                <span className="mono-label text-faint">איך קולי עונה</span>
+                <div className="ms-auto w-fit rounded-2xl rounded-tl-md bg-action px-5 py-4 text-body text-action-ink">
+                  <span className="mb-1.5 flex items-center gap-1 text-[10px] font-medium uppercase tracking-[0.15em] opacity-55">
                     <Mic className="size-3" /> קולי
                   </span>
                   {current.reply}
