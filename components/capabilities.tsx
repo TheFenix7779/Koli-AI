@@ -98,11 +98,11 @@ export function Capabilities() {
           </div>
         </Reveal>
 
-        {/* Language — the one full-bleed accent tile */}
-        <Reveal delay={80} className="flex flex-col justify-between gap-10 rounded-tiles bg-iris-gleam p-8 text-void md:p-10 lg:col-span-5">
+        {/* Language — the greeting sits in a circular voice orb */}
+        <Reveal delay={80} className="flex flex-col justify-between gap-8 rounded-tiles border border-line bg-surface p-8 md:p-10 lg:col-span-5">
           <div className="flex flex-col gap-2">
-            <h3 className="display-serif text-[28px] leading-tight">כל שפה שהלקוח מדבר</h3>
-            <p className="text-body text-void/70">
+            <h3 className="display-serif text-[28px] leading-tight text-ink">כל שפה שהלקוח מדבר</h3>
+            <p className="text-body text-muted">
               קולי מזהה את השפה מהמילה הראשונה ועוברת אליה — בלי תפריטים, בלי הגדרות, בלי לבקש מהלקוח לנסות שוב.
             </p>
           </div>
@@ -161,7 +161,7 @@ export function Capabilities() {
                 { icon: MessageCircle, label: "WhatsApp" },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex h-12 items-center gap-2.5">
-                  <span className="flex size-9 items-center justify-center rounded-lg border border-line bg-surface-2 text-ink">
+                  <span className="flex size-10 items-center justify-center rounded-full border border-line bg-surface-2 text-ink">
                     <Icon className="size-4" />
                   </span>
                   <span className="text-body-sm text-muted">{label}</span>
@@ -178,24 +178,33 @@ export function Capabilities() {
               <path d="M24 48 H4" stroke="currentColor" strokeWidth="1.25" />
             </svg>
 
-            <span className="flex items-center gap-2 rounded-full bg-action px-3.5 py-2 text-body-sm text-action-ink">
+            <span className="relative flex size-[68px] shrink-0 flex-col items-center justify-center gap-0.5 rounded-full bg-action text-action-ink">
+              <span className="absolute -inset-2.5 rounded-full border border-iris-gleam/25" />
               <Mic className="size-3.5" />
-              קולי
+              <span className="text-[12px] font-medium">קולי</span>
             </span>
           </div>
         </Reveal>
 
-        {/* Emergency */}
-        <Reveal delay={240} className="flex flex-col justify-between gap-8 rounded-tiles bg-orchid-bloom p-8 text-void md:p-10 lg:col-span-3">
-          <span className="flex size-11 items-center justify-center rounded-xl bg-void/10">
-            <AlertTriangle className="size-5" />
-          </span>
+        {/* Emergency — an urgent call pings outward in rings */}
+        <Reveal delay={240} className="flex flex-col justify-between gap-8 rounded-tiles border border-line bg-surface p-8 md:p-10 lg:col-span-3">
+          <div className="flex justify-center pt-2" aria-hidden>
+            <div className="relative flex size-36 items-center justify-center">
+              <span className="absolute inset-0 rounded-full border border-orchid-bloom/25" />
+              <span className="absolute inset-0 animate-ping rounded-full border border-orchid-bloom/50 [animation-duration:3s]" />
+              <span className="absolute inset-6 rounded-full border border-orchid-bloom/40" />
+              <span className="absolute inset-6 rounded-full bg-orchid-bloom/20 blur-xl" />
+              <span className="relative flex size-16 items-center justify-center rounded-full bg-orchid-bloom text-void shadow-[inset_0_-12px_28px_rgba(0,0,0,0.14),inset_0_10px_22px_rgba(255,255,255,0.32)]">
+                <AlertTriangle className="size-6" />
+              </span>
+            </div>
+          </div>
           <div className="flex flex-col gap-3">
-            <h3 className="display-serif text-[28px] leading-tight">מזהה מקרי חירום</h3>
-            <p className="text-body text-void/70">
+            <h3 className="display-serif text-[28px] leading-tight text-ink">מזהה מקרי חירום</h3>
+            <p className="text-body text-muted">
               שיחה דחופה לא מחכה לבוקר. קולי מזהה, מסמנת — ומעבירה הלאה.
             </p>
-            <span className="flex w-fit items-center gap-1.5 rounded-full bg-void px-3 py-1.5 text-[12px] text-pure">
+            <span className="flex w-fit items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-[12px] text-ink-2">
               מועבר לאדם, מיד
               <ArrowLeft className="size-3.5" />
             </span>

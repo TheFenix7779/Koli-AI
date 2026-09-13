@@ -14,7 +14,7 @@ export function FinalCta() {
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-[radial-gradient(ellipse_60%_80%_at_50%_100%,rgba(64,138,193,0.55),transparent)]"
+        className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-[radial-gradient(ellipse_60%_45%_at_50%_38%,rgba(64,138,193,0.5),transparent)]"
       />
       <Reveal className="container-page flex flex-col items-center gap-10 text-center">
         <span className="mono-label text-cloud/70">מוכנים?</span>
