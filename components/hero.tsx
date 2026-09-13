@@ -1,0 +1,76 @@
+import { ArrowLeft, MessageCircle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { LiveCall } from "./live-call"
+
+const WHATSAPP = "https://wa.me/972555648222"
+
+export function Hero() {
+  return (
+    <section id="hero" className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      {/* Grid BG */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 h-[720px] opacity-60
+        bg-[linear-gradient(to_right,#2e2e2e_1px,transparent_1px),linear-gradient(to_bottom,#2e2e2e_1px,transparent_1px)]
+        bg-[size:6rem_5rem]
+        [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_50%,transparent_100%)]"
+      />
+      {/* Iris glow behind the call card (left side in RTL) */}
+      <div
+        aria-hidden
+        className="absolute left-[-10%] top-[20%] -z-10 h-[620px] w-[620px] rounded-full bg-iris-gleam/20 blur-[140px]"
+      />
+
+      <div className="container-page grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-8">
+        {/* Copy */}
+        <div className="flex flex-col items-start gap-8 lg:col-span-7">
+          <span className="animate-fade-in mono-label flex items-center gap-3 text-ash opacity-0">
+            <span aria-hidden className="animate-pulse-dot size-2 rounded-full bg-cyan-signal" />
+            AI Receptionist · עברית / English
+          </span>
+
+          <h1
+            className="animate-fade-in delay-100 display-serif text-balance
+            bg-gradient-to-bl from-pure from-45% to-pure/40 bg-clip-text
+            text-[52px] leading-[1.0] text-transparent opacity-0 sm:text-7xl lg:text-[88px] xl:text-display"
+          >
+            הטלפון מצלצל.
+            <br />
+            <span className="italic">קולי</span> כבר ענתה.
+          </h1>
+
+          <p className="animate-fade-in delay-200 max-w-xl text-balance font-light text-subheading text-ash opacity-0 md:text-xl">
+            רצפציה מבוססת בינה מלאכותית שמדברת עברית ואנגלית, קובעת תורים ישירות ביומן, מזהה מקרים דחופים
+            ומעדכנת את הצוות — עשרים וארבע שעות ביממה, בלי לשכור אף אחד.
+          </p>
+
+          <div className="animate-fade-in delay-300 flex w-full flex-col gap-3 opacity-0 sm:w-auto sm:flex-row">
+            <Button asChild size="lg">
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+                <MessageCircle />
+                לשמוע דמו ב־WhatsApp
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="ghost">
+              <a href="#day">
+                יום אחד עם קולי
+                <ArrowLeft />
+              </a>
+            </Button>
+          </div>
+
+          <ul className="animate-fade-in delay-500 flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-fog opacity-0">
+            <li>ללא התחייבות</li>
+            <li>ייעוץ ראשוני חינם</li>
+            <li>מענה תוך דקות</li>
+          </ul>
+        </div>
+
+        {/* Live demo */}
+        <div className="animate-fade-up delay-300 flex justify-center opacity-0 lg:col-span-5 lg:justify-start">
+          <LiveCall />
+        </div>
+      </div>
+    </section>
+  )
+}
