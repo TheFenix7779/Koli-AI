@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mic } from "lucide-react"
+import { Lock, Mic } from "lucide-react"
 
 export function Footer() {
   return (
@@ -32,10 +32,12 @@ export function Footer() {
           <Link
             href="/tools"
             rel="nofollow"
-            aria-label="כלים פנימיים"
             title="Internal tools"
-            className="size-2 shrink-0 rounded-full bg-cloud/25 transition-colors duration-200 hover:bg-cloud/80"
-          />
+            className="flex shrink-0 items-center gap-1.5 rounded-full border border-cloud/25 px-3 py-1.5 text-[12px] text-cloud/70 transition-colors duration-200 hover:border-cloud/60 hover:text-pure"
+          >
+            <Lock className="size-3" />
+            כלים
+          </Link>
         </div>
       </div>
     </footer>
