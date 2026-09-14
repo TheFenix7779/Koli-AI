@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Mic } from "lucide-react"
 
 export function Footer() {
@@ -24,9 +25,18 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mono-label text-cloud/55">
-          © <span className="ltr">2025</span> קולי AI. כל הזכויות שמורות.
-        </p>
+        <div className="flex items-center justify-between gap-4">
+          <p className="mono-label text-cloud/55">
+            © <span className="ltr">2025</span> קולי AI. כל הזכויות שמורות.
+          </p>
+          <Link
+            href="/tools"
+            rel="nofollow"
+            aria-label="כלים פנימיים"
+            title="Internal tools"
+            className="size-2 shrink-0 rounded-full bg-cloud/25 transition-colors duration-200 hover:bg-cloud/80"
+          />
+        </div>
       </div>
     </footer>
   )
