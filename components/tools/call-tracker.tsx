@@ -269,7 +269,23 @@ export function CallTracker() {
                     <div className="text-[12px] text-faint">
                       {lead.category}
                       {lead.city ? ` · ${lead.city}` : ""}
-                      {lead.hasSite ? " · site" : ""}
+                      {lead.website ? (
+                        <>
+                          {" · "}
+                          <a
+                            href={lead.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-accent hover:underline"
+                          >
+                            site
+                          </a>
+                        </>
+                      ) : lead.hasSite ? (
+                        " · site"
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </td>
 

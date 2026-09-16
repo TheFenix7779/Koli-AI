@@ -8,6 +8,7 @@ export type Lead = {
   city: string
   phone: string
   hasSite: boolean
+  website: string | null
   rating: number | null
   reviews: number | null
 }
