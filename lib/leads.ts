@@ -12,13 +12,15 @@ export type Lead = {
   reviews: number | null
 }
 
-export type Outcome = "closed" | "not_closed"
+export type Outcome = "closed" | "not_closed" | "no_answer"
 
 /** Per-lead progress, keyed by phone — the only part that lives in Supabase. */
 export type CallStatus = {
   phone: string
   dialed: boolean
   outcome: Outcome | null
+  /** ISO date (YYYY-MM-DD) to call this lead back on, or null if none set. */
+  callback_date: string | null
   updated_at: string
 }
 

@@ -23,7 +23,7 @@ export async function GET() {
 
   const { data, error } = await supabaseAdmin()
     .from(TABLE)
-    .select("phone, dialed, outcome, updated_at")
+    .select("phone, dialed, outcome, callback_date, updated_at")
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ statuses: data ?? [] })
@@ -37,13 +37,22 @@ export async function POST(req: Request) {
     phone?: string
     dialed?: boolean
     outcome?: string | null
+    callbackDate?: string | null
   }
 
   if (typeof body.phone !== "string" || !body.phone) {
     return NextResponse.json({ error: "phone is required" }, { status: 400 })
   }
-  if (body.outcome != null && body.outcome !== "closed" && body.outcome !== "not_closed") {
+  if (
+    body.outcome != null &&
+    body.outcome !== "closed" &&
+    body.outcome !== "not_closed" &&
+    body.outcome !== "no_answer"
+  ) {
     return NextResponse.json({ error: "invalid outcome" }, { status: 400 })
+  }
+  if (body.callbackDate != null && !/^\d{4}-\d{2}-\d{2}$/.test(body.callbackDate)) {
+    return NextResponse.json({ error: "invalid callbackDate" }, { status: 400 })
   }
 
   const { error } = await supabaseAdmin()
@@ -53,6 +62,7 @@ export async function POST(req: Request) {
         phone: body.phone,
         dialed: Boolean(body.dialed),
         outcome: body.outcome ?? null,
+        callback_date: body.callbackDate ?? null,
         updated_at: new Date().toISOString(),
       },
       { onConflict: "phone" },

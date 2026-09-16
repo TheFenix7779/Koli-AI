@@ -4,8 +4,9 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { Check, Copy, Phone, RefreshCw } from "lucide-react"
 import { CATEGORIES, CITIES, LEADS, telHref, type CallStatus, type Outcome } from "@/lib/leads"
 
-type StatusMap = Record<string, { dialed: boolean; outcome: Outcome | null }>
-type Filter = "all" | "not_dialed" | "dialed" | "closed" | "not_closed"
+type LeadStatus = { dialed: boolean; outcome: Outcome | null; callbackDate: string | null }
+type StatusMap = Record<string, LeadStatus>
+type Filter = "all" | "not_dialed" | "dialed" | "closed" | "not_closed" | "callback_due"
 
 const FILTERS: { value: Filter; label: string }[] = [
   { value: "all", label: "All" },
@@ -13,9 +14,15 @@ const FILTERS: { value: Filter; label: string }[] = [
   { value: "dialed", label: "Dialed" },
   { value: "closed", label: "Closed" },
   { value: "not_closed", label: "Not closed" },
+  { value: "callback_due", label: "Callback due" },
 ]
 
-const EMPTY = { dialed: false, outcome: null as Outcome | null }
+const EMPTY: LeadStatus = { dialed: false, outcome: null, callbackDate: null }
+
+/** Today as YYYY-MM-DD, comparable directly against callbackDate strings. */
+function today() {
+  return new Date().toISOString().slice(0, 10)
+}
 
 export function CallTracker() {
   const [statuses, setStatuses] = useState<StatusMap>({})
@@ -35,7 +42,7 @@ export function CallTracker() {
       if (!res.ok) throw new Error(data.error ?? "Failed to load")
       const next: StatusMap = {}
       for (const s of data.statuses ?? []) {
-        next[s.phone] = { dialed: s.dialed, outcome: s.outcome }
+        next[s.phone] = { dialed: s.dialed, outcome: s.outcome, callbackDate: s.callback_date ?? null }
       }
       setStatuses(next)
       setError(null)
@@ -58,7 +65,7 @@ export function CallTracker() {
   }, [load])
 
   const save = useCallback(
-    async (phone: string, next: { dialed: boolean; outcome: Outcome | null }) => {
+    async (phone: string, next: LeadStatus) => {
       const prev = statuses[phone] ?? EMPTY
       setStatuses((s) => ({ ...s, [phone]: next }))
       try {
@@ -86,7 +93,12 @@ export function CallTracker() {
     const cur = statuses[phone] ?? EMPTY
     const next = cur.outcome === outcome ? null : outcome
     // Marking an outcome implies the call happened.
-    save(phone, { dialed: next ? true : cur.dialed, outcome: next })
+    save(phone, { dialed: next ? true : cur.dialed, outcome: next, callbackDate: cur.callbackDate })
+  }
+
+  function setCallback(phone: string, date: string | null) {
+    const cur = statuses[phone] ?? EMPTY
+    save(phone, { ...cur, callbackDate: date })
   }
 
   async function resetAll() {
@@ -127,6 +139,7 @@ export function CallTracker() {
       if (filter === "not_dialed" && s.dialed) return false
       if (filter === "closed" && s.outcome !== "closed") return false
       if (filter === "not_closed" && s.outcome !== "not_closed") return false
+      if (filter === "callback_due" && (!s.callbackDate || s.callbackDate > today())) return false
 
       if (q) {
         const hay = `${lead.name} ${lead.owner ?? ""} ${lead.city} ${lead.category} ${lead.phone}`
@@ -135,6 +148,16 @@ export function CallTracker() {
       return true
     })
   }, [query, category, city, filter, statuses])
+
+  const sortedVisible = useMemo(() => {
+    if (filter !== "callback_due") return visible
+    // Soonest callback first.
+    return [...visible].sort((a, b) => {
+      const da = statuses[a.phone]?.callbackDate ?? ""
+      const db = statuses[b.phone]?.callbackDate ?? ""
+      return da.localeCompare(db)
+    })
+  }, [visible, filter, statuses])
 
   const pct = (n: number) => (stats.total ? Math.round((n / stats.total) * 100) : 0)
   const closeRate = stats.dialed ? Math.round((stats.closed / stats.dialed) * 100) : 0
@@ -212,7 +235,7 @@ export function CallTracker() {
 
       <div className="flex items-center gap-3 text-body-sm text-muted">
         <span>
-          Showing {visible.length} of {stats.total} leads
+          Showing {sortedVisible.length} of {stats.total} leads
         </span>
         {loading ? <RefreshCw className="size-3.5 animate-spin" /> : null}
         {error ? <span className="text-orchid-bloom">{error}</span> : null}
@@ -227,11 +250,12 @@ export function CallTracker() {
               <Th className="w-44">Phone</Th>
               <Th className="w-24">Rating</Th>
               <Th className="w-20">Dialed</Th>
-              <Th className="w-44">Outcome</Th>
+              <Th className="w-52">Outcome</Th>
+              <Th className="w-40">Ring back</Th>
             </tr>
           </thead>
           <tbody>
-            {visible.map((lead) => {
+            {sortedVisible.map((lead) => {
               const s = statuses[lead.phone] ?? EMPTY
               return (
                 <tr key={lead.phone} className="border-t border-line bg-surface align-top">
@@ -281,7 +305,7 @@ export function CallTracker() {
                   </td>
 
                   <td className="px-3 py-3">
-                    <div className="flex gap-1.5">
+                    <div className="flex flex-wrap gap-1.5">
                       <OutcomeButton
                         active={s.outcome === "closed"}
                         tone="accent"
@@ -296,14 +320,25 @@ export function CallTracker() {
                       >
                         Not closed
                       </OutcomeButton>
+                      <OutcomeButton
+                        active={s.outcome === "no_answer"}
+                        tone="muted"
+                        onClick={() => setOutcome(lead.phone, "no_answer")}
+                      >
+                        Didn&apos;t answer
+                      </OutcomeButton>
                     </div>
+                  </td>
+
+                  <td className="px-3 py-3">
+                    <CallbackCell value={s.callbackDate} onChange={(date) => setCallback(lead.phone, date)} />
                   </td>
                 </tr>
               )
             })}
-            {visible.length === 0 ? (
+            {sortedVisible.length === 0 ? (
               <tr>
-                <td colSpan={6} className="bg-surface px-3 py-10 text-center text-muted">
+                <td colSpan={7} className="bg-surface px-3 py-10 text-center text-muted">
                   No leads match these filters.
                 </td>
               </tr>
@@ -349,11 +384,16 @@ function OutcomeButton({
   children,
 }: {
   active: boolean
-  tone: "accent" | "warn"
+  tone: "accent" | "warn" | "muted"
   onClick: () => void
   children: React.ReactNode
 }) {
-  const on = tone === "accent" ? "bg-accent text-void" : "bg-orchid-bloom text-void"
+  const on =
+    tone === "accent"
+      ? "bg-accent text-void"
+      : tone === "warn"
+        ? "bg-orchid-bloom text-void"
+        : "bg-surface-3 text-ink"
   return (
     <button
       onClick={onClick}
@@ -364,5 +404,40 @@ function OutcomeButton({
     >
       {children}
     </button>
+  )
+}
+
+function CallbackCell({
+  value,
+  onChange,
+}: {
+  value: string | null
+  onChange: (date: string | null) => void
+}) {
+  const overdue = value != null && value <= today()
+  return (
+    <div className="flex flex-col gap-1">
+      <input
+        type="date"
+        value={value ?? ""}
+        onChange={(e) => onChange(e.target.value || null)}
+        aria-label="Ring back on"
+        className="rounded-buttons border border-line bg-canvas px-2 py-1 text-[12px] text-ink outline-none focus-visible:border-accent"
+      />
+      {value ? (
+        <div className="flex items-center gap-1.5 text-[12px]">
+          <span className={overdue ? "text-orchid-bloom" : "text-accent"}>
+            {overdue ? "Call back today/overdue:" : "Call back:"}{" "}
+            {new Date(`${value}T00:00:00`).toLocaleDateString(undefined, {
+              month: "short",
+              day: "numeric",
+            })}
+          </span>
+          <button onClick={() => onChange(null)} className="text-faint hover:text-ink">
+            Clear
+          </button>
+        </div>
+      ) : null}
+    </div>
   )
 }
