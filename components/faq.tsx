@@ -45,7 +45,7 @@ export function Faq() {
             <Reveal key={f.q} delay={i * 60}>
               <details className="group">
                 <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-6 py-6 text-start text-subheading text-ink-2 transition-colors duration-200 hover:text-ink">
-                  {f.q}
+                  <h3 className="font-sans text-subheading font-normal">{f.q}</h3>
                   <ChevronDown className="faq-chevron size-5 shrink-0 text-muted transition-transform duration-300" />
                 </summary>
                 <p className="max-w-2xl pb-7 text-body text-muted">{f.a}</p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Frank_Ruhl_Libre, Heebo, Roboto_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+import { SITE_URL } from "@/lib/site"
 
 const frank = Frank_Ruhl_Libre({
   subsets: ["hebrew", "latin"],
@@ -23,8 +24,6 @@ const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   display: "swap",
 })
-
-const SITE_URL = "https://koli-ai.com"
 
 const TITLE = "קולי AI — מזכירה וירטואלית ומוקד קבלה AI שעובד 24/7"
 const DESCRIPTION =

@@ -175,7 +175,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
             {industry.faq.map((f) => (
               <details key={f.q} className="group">
                 <summary className="flex min-h-14 cursor-pointer list-none items-center py-6 text-subheading text-ink-2 hover:text-ink">
-                  {f.q}
+                  <h3 className="font-sans text-subheading font-normal">{f.q}</h3>
                 </summary>
                 <p className="max-w-2xl pb-7 text-body text-muted">{f.a}</p>
               </details>

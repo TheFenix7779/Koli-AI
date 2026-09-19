@@ -1,14 +1,11 @@
 import type { MetadataRoute } from "next"
 import { INDUSTRIES } from "@/lib/industries"
 import { UPDATED_ISO } from "@/lib/legal"
+import { CONTENT_UPDATED, HOME_UPDATED } from "@/lib/site"
 
-// Bump when the homepage copy changes. Google only trusts <lastmod> when it
-// tracks real content changes, so this is a hand-maintained date rather than
-// `new Date()`, which would mark every page as modified on every deploy.
-const HOME_UPDATED = "2026-09-19"
-
-// Bump per page when its copy changes.
-const CONTENT_UPDATED = "2026-09-19"
+// Dates are hand-maintained in lib/site.ts. Google only trusts <lastmod> when
+// it tracks real content changes, and `new Date()` would mark every page as
+// modified on every deploy.
 
 // changefreq and priority are deliberately omitted: Google ignores both.
 

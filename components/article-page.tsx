@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Mic, MessageCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { WhatsAppLink } from "@/components/contact-link"
+import { CONTENT_UPDATED } from "@/lib/site"
 
 /** Shared chrome for the guide, pricing and comparison pages. */
 export function ArticlePage({
@@ -105,17 +106,14 @@ export function Section({ heading, children }: { heading: string; children: Reac
   )
 }
 
-/** Bump when a guide's copy changes. */
-const CONTENT_DATE = "2026-09-19"
-
 /** Article + breadcrumb JSON-LD, matching the graph nodes in the root layout. */
 export function articleJsonLd({
   title,
   description,
   path,
   section,
-  published = CONTENT_DATE,
-  modified = CONTENT_DATE,
+  published = CONTENT_UPDATED,
+  modified = CONTENT_UPDATED,
 }: {
   title: string
   description: string

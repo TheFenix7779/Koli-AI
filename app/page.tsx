@@ -1,3 +1,4 @@
+import { HOME_UPDATED, SITE_URL } from "@/lib/site"
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { Ticker } from "@/components/ticker"
@@ -11,9 +12,27 @@ import { Faq } from "@/components/faq"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: "קולי AI",
+      inLanguage: "he-IL",
+      dateModified: HOME_UPDATED,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
+      primaryImageOfPage: `${SITE_URL}/opengraph-image`,
+    },
+  ],
+}
+
 export default function Page() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:right-3 focus:z-[100] focus:rounded-lg focus:bg-pure focus:px-4 focus:py-2 focus:text-void"
