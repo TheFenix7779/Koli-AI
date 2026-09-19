@@ -1,4 +1,4 @@
-import { HOME_UPDATED, SITE_URL } from "@/lib/site"
+import { DEMO_AUDIO, HOME_UPDATED, SITE_URL } from "@/lib/site"
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { Ticker } from "@/components/ticker"
@@ -25,6 +25,16 @@ const JSON_LD = {
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#organization` },
       primaryImageOfPage: `${SITE_URL}/opengraph-image`,
+    },
+    {
+      "@type": "AudioObject",
+      name: "דמו: קולי עונה לשיחה",
+      description: "הדגמה של שיחה עם קולי AI, המזכירה הווירטואלית שעונה לטלפון ול-WhatsApp.",
+      contentUrl: `${SITE_URL}${DEMO_AUDIO}`,
+      encodingFormat: "audio/mpeg",
+      duration: "PT31S",
+      inLanguage: "he-IL",
+      isPartOf: { "@id": `${SITE_URL}/#webpage` },
     },
   ],
 }

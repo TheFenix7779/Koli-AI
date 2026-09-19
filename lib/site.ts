@@ -5,3 +5,6 @@ export const HOME_UPDATED = "2026-09-19"
 
 /** Bump when a guide, pricing or comparison page's copy changes. */
 export const CONTENT_UPDATED = "2026-09-19"
+
+/** Sample call. Descriptive filename on purpose — it is a crawlable asset. */
+export const DEMO_AUDIO = "/koli-ai-demo-call.mp3"

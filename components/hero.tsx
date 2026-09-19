@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { WhatsAppLink } from "@/components/contact-link"
+import { AudioDemo } from "./audio-demo"
 import { LiveCall } from "./live-call"
 
 
@@ -60,6 +61,8 @@ export function Hero() {
               </a>
             </Button>
           </div>
+
+          <AudioDemo location="hero" className="animate-fade-in delay-400 opacity-0" />
 
           {/* The only first-party proof we have — it belongs above the fold, not on /about. */}
           <p className="animate-fade-in delay-400 text-body-sm text-muted opacity-0">
