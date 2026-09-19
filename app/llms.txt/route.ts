@@ -6,7 +6,7 @@ export function GET() {
   const pages = INDUSTRIES.map((i) => `- [${i.name}](https://koli-ai.com/industries/${i.slug}): ${i.tagline}`)
   const body = `# קולי AI (Koli AI)
 
-> מוקד קבלה דיגיטלי מבוסס AI שעונה לטלפון וב-WhatsApp 24/7 בכל שפה, מזמן תורים ליומן ומתעד כל שיחה. מיועד למרפאות, קליניקות ועסקי שירות בישראל.
+> מוקד קבלה דיגיטלי מבוסס AI שעונה לטלפון וב-WhatsApp 24/7 בכל שפה, מזמן תורים ליומן (Google Calendar או CRM קיים) ומתעד כל שיחה. מיועד למרפאות, קליניקות ועסקי שירות בישראל.
 
 ## עמודים
 - [דף הבית](https://koli-ai.com/): סקירת המוצר, יכולות ושאלות נפוצות

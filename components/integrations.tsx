@@ -7,6 +7,7 @@ const STACK = [
   { name: "Twilio", role: "טלפוניה" },
   { name: "WhatsApp Business API", role: "הודעות" },
   { name: "Google Calendar", role: "יומן ותורים" },
+  { name: "היומן או ה-CRM שלכם", role: "חיבור לקיים" },
   { name: "Google Sheets", role: "תיעוד" },
   { name: "Email", role: "התראות לצוות" },
 ]

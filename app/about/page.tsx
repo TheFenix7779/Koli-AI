@@ -106,8 +106,8 @@ export default function AboutPage() {
               <strong>Zadarma</strong> — קווי טלפון וניתוב שיחות
             </li>
             <li>
-              <strong>Google Calendar ו-Sheets</strong> — היומן שאליו נכנסים התורים והתיעוד של
-              השיחות
+              <strong>Google Calendar ו-Sheets</strong> — ברירת המחדל ליומן ולתיעוד. אפשר לחבר
+              במקומם יומן או CRM שכבר יש לכם
             </li>
           </ul>
           <p>

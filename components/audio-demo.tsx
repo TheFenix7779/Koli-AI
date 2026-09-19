@@ -5,6 +5,7 @@ import { track } from "@vercel/analytics"
 import { Play, Pause } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { CLIPS, type Clip } from "@/lib/site"
+import { WHATSAPP_URL } from "@/lib/contact"
 
 // Fixed heights: a random waveform would differ between server and client and
 // break hydration. 40 bars reads as speech without pretending to be real data.
@@ -94,11 +95,11 @@ export function AudioDemo({
   const light = tone === "light"
 
   return (
+    <div className={cn("flex w-full max-w-md flex-col gap-2", className)}>
     <div
       className={cn(
-        "flex w-full max-w-md items-center gap-4 rounded-cards border p-3",
+        "flex w-full items-center gap-4 rounded-cards border p-3",
         light ? "border-pure/25 bg-pure/10 backdrop-blur-xl" : "border-line bg-surface",
-        className,
       )}
     >
       <audio ref={ref} src={clip.src} preload="none" />
@@ -155,6 +156,24 @@ export function AudioDemo({
           })}
         </div>
       </div>
+    </div>
+
+      <p className={cn("text-body-sm", light ? "text-cloud/70" : "text-faint")}>
+        ההקלטה עוברת דרך האינטרנט ומאבדת קצת מהאיכות. בשיחה אמיתית קולי נשמעת נקייה יותר —{" "}
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track("demo_book_call", { location })}
+          className={cn(
+            "underline-offset-4 hover:underline",
+            light ? "text-pure" : "text-accent",
+          )}
+        >
+          קבעו שיחה ותשמעו בעצמכם
+        </a>
+        .
+      </p>
     </div>
   )
 }

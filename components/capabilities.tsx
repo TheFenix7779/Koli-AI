@@ -44,7 +44,7 @@ export function Capabilities() {
           <div className="flex flex-col gap-2">
             <h3 className="display-serif text-[28px] leading-tight text-ink">זימון תורים בזמן אמת</h3>
             <p className="max-w-md text-body text-muted">
-              קולי רואה את היומן שלכם, מציעה רק זמנים פנויים ומאשרת מיד. הסנכרון ל־Google Calendar דו־כיווני.
+              קולי רואה את היומן שלכם, מציעה רק זמנים פנויים ומאשרת מיד. הסנכרון ל־Google Calendar דו־כיווני, ואפשר לחבר גם יומן או CRM אחר שאתם כבר עובדים איתו.
             </p>
           </div>
 
