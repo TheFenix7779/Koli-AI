@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { INDUSTRIES } from "@/lib/industries"
+import { UPDATED_ISO } from "@/lib/legal"
 
 // Bump when the homepage copy changes. Google only trusts <lastmod> when it
 // tracks real content changes, so this is a hand-maintained date rather than
@@ -19,5 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `https://koli-ai.com/industries/${i.slug}`,
       lastModified: i.updated,
     })),
+    { url: "https://koli-ai.com/privacy", lastModified: UPDATED_ISO },
+    { url: "https://koli-ai.com/terms", lastModified: UPDATED_ISO },
   ]
 }

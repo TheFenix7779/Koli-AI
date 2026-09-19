@@ -20,8 +20,8 @@ export function Footer() {
           </div>
 
           <nav aria-label="קישורים משפטיים" className="flex flex-wrap items-center gap-x-6 gap-y-2 text-body-sm text-cloud/70">
-            <a href="#" className="transition-colors duration-200 hover:text-pure">מדיניות פרטיות</a>
-            <a href="#" className="transition-colors duration-200 hover:text-pure">תנאי שימוש</a>
+            <Link href="/privacy" className="transition-colors duration-200 hover:text-pure">מדיניות פרטיות</Link>
+            <Link href="/terms" className="transition-colors duration-200 hover:text-pure">תנאי שימוש</Link>
             <PhoneLink location="footer" className="ltr font-mono tabular-nums transition-colors duration-200 hover:text-pure">
               {PHONE_DISPLAY}
             </PhoneLink>

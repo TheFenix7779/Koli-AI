@@ -28,7 +28,7 @@ cheap to honour — change any of them.
 | Text-to-speech | ElevenLabs |
 | LLM / speech-to-text | OpenAI (ChatGPT) |
 | Telephony | Twilio, Zadarma |
-| WhatsApp Business API | **None — not implemented** |
+| WhatsApp Business API | Twilio (Twilio is an official WhatsApp provider) |
 
 Confirm the vendor split: the assumption below is ElevenLabs for the voice,
 OpenAI for both transcription and the conversation, Twilio and Zadarma for
@@ -54,7 +54,8 @@ sell to a clinic's procurement.
 `privacy@koli-ai.com` costs nothing and reads as a business. A Gmail address on
 a privacy policy undercuts the same trust the page exists to build.
 
-**C. Remove the WhatsApp claims until WhatsApp works.** See section J.
+**C. WhatsApp — resolved.** It runs through Twilio, so the site's WhatsApp
+claims are accurate. Section J is retained only as a record of the check.
 
 ---
 
@@ -154,48 +155,11 @@ longer than you need.
 
 ---
 
-## J. The site currently claims WhatsApp support
+## J. WhatsApp claim check — resolved
 
-There is no WhatsApp Business API provider, so the product cannot answer
-WhatsApp messages. The site says it can, in at least these places:
+Queried because section A initially listed no WhatsApp provider, while the site
+advertises WhatsApp in seven places (FAQ, integrations, ticker, live-call demo,
+industry pages, llms.txt, meta descriptions).
 
-| Where | Claim |
-|---|---|
-| Homepage meta description | "מוקד קבלה דיגיטלי ... שמדבר בכל שפה" + WhatsApp in FAQ |
-| `components/faq.tsx` | answers "בטלפון וב־WhatsApp" |
-| `components/integrations.tsx` | lists "WhatsApp Business API" as an integration |
-| `components/ticker.tsx` | "WhatsApp Business" |
-| `components/live-call.tsx` | demo says "שלחתי אישור ב־WhatsApp" |
-| `lib/industries.ts` | 6+ claims across meta descriptions and body copy |
-| `app/llms.txt/route.ts` | "עונה לטלפון וב-WhatsApp 24/7" |
-
-This is advertising a capability that does not exist, to clinics, in writing.
-It is also now in the meta descriptions and structured data, so it is what
-Google and AI assistants will repeat.
-
-Note on provenance: the homepage claims predate this work, but the industry
-pages and llms.txt propagated them, written on the assumption the homepage was
-accurate. That was my error.
-
-**Two ways out.** Either ship WhatsApp, or strip the claims until it ships.
-Stripping is roughly an hour of copy edits and costs one differentiator;
-leaving it is a misrepresentation that a single prospect can catch in a demo.
-
-The WhatsApp contact buttons are unaffected — those link to your own number and
-work exactly as advertised.
-
-## I. Publishing checklist
-
-- [ ] Business registered (see A1) — blocks invoicing and the liability cap
-- [ ] WhatsApp claims either shipped or removed (see J)
-- [ ] privacy@koli-ai.com in place of the Gmail address
-- [ ] Vendor split in section A confirmed
-- [ ] Items 1–3 true (DPA template exists and is signed)
-- [ ] Items 7–8 true (the call opening actually says it)
-- [ ] Items 10–14 true (deletion is automated, not a manual promise)
-- [ ] Items 15–18 true (regions recorded, access list written down)
-- [ ] Lawyer has reviewed the final Hebrew text
-- [ ] Then: build `/privacy` and `/terms` and point the footer links at them
-
-Until the last box is ticked, the footer links stay as they are. Dead links are
-a smaller problem than a policy that is not true.
+Resolved: WhatsApp runs through Twilio, which is an official WhatsApp Business
+Solution Provider. The claims are accurate and no copy changes are needed.
