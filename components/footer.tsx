@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Lock, Mic } from "lucide-react"
+import { INDUSTRIES } from "@/lib/industries"
 
 export function Footer() {
   return (
@@ -24,6 +25,14 @@ export function Footer() {
             </a>
           </nav>
         </div>
+
+        <nav aria-label="תחומי עיסוק" className="flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-cloud/70">
+          {INDUSTRIES.map((i) => (
+            <Link key={i.slug} href={`/industries/${i.slug}`} className="transition-colors duration-200 hover:text-pure">
+              {i.name}
+            </Link>
+          ))}
+        </nav>
 
         <div className="flex items-center justify-between gap-4">
           <p className="mono-label text-cloud/55">
