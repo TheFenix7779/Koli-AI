@@ -54,24 +54,28 @@ function GuidesMenu() {
         <ChevronDown className={`size-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
-      {open && (
-        <ul
-          id="guides-menu"
-          className="absolute end-0 top-full z-50 mt-2 min-w-60 overflow-hidden rounded-cards border border-line bg-canvas p-1.5 shadow-xl"
-        >
-          {GUIDES.map((g) => (
-            <li key={g.href}>
-              <Link
-                href={g.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-lg px-3.5 py-2.5 text-body-sm text-ink-2 transition-colors duration-200 hover:bg-surface-2 hover:text-ink"
-              >
-                {g.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {/*
+        Rendered even when closed, and hidden with CSS rather than unmounted, so
+        these links stay in the server-rendered HTML. Mounting them only on open
+        would hide the pillar page's internal links to the guides from crawlers.
+      */}
+      <ul
+        id="guides-menu"
+        hidden={!open}
+        className="absolute end-0 top-full z-50 mt-2 min-w-60 overflow-hidden rounded-cards border border-line bg-canvas p-1.5 shadow-xl"
+      >
+        {GUIDES.map((g) => (
+          <li key={g.href}>
+            <Link
+              href={g.href}
+              onClick={() => setOpen(false)}
+              className="block rounded-lg px-3.5 py-2.5 text-body-sm text-ink-2 transition-colors duration-200 hover:bg-surface-2 hover:text-ink"
+            >
+              {g.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </li>
   )
 }
