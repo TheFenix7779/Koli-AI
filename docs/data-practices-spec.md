@@ -16,24 +16,45 @@ cheap to honour — change any of them.
 
 ---
 
-## A. Facts only you can supply
-
-These cannot be chosen for you. Fill them in before drafting the public text.
+## A. Identity and vendors (supplied 2026-09-19)
 
 | Field | Value |
 |---|---|
-| Registered legal name | |
-| ח.פ. / ע.מ. number | |
-| Registered address | |
-| Privacy contact email | |
-| Speech-to-text provider | |
-| LLM / AI model provider | |
-| Text-to-speech provider | |
-| Telephony provider | |
-| WhatsApp Business API provider | |
+| Operators | Eden Elnekave, Eitan Kadmon |
+| Legal entity | **None — not registered yet** |
+| ח.פ. / ע.מ. number | — |
+| Registered address | — |
+| Privacy contact | koli-ai.team@gmail.com |
+| Text-to-speech | ElevenLabs |
+| LLM / speech-to-text | OpenAI (ChatGPT) |
+| Telephony | Twilio, Zadarma |
+| WhatsApp Business API | **None — not implemented** |
 
-A privacy policy must name real sub-processors. Do not publish a vendor you do
-not use.
+Confirm the vendor split: the assumption below is ElevenLabs for the voice,
+OpenAI for both transcription and the conversation, Twilio and Zadarma for
+phone numbers and call routing.
+
+### A1. Blockers this creates
+
+**A. Register the business before signing a paying clinic.** Two consequences,
+both worse than the registration paperwork:
+
+- Without an עוסק מורשה/פטור you cannot issue a lawful invoice, which a clinic
+  needs in order to pay you.
+- Without a company, Eden and Eitan are personally the data processors. A
+  mishandled patient call is a personal liability, and the liability cap in item
+  26 protects almost nothing. A limited company is what makes that clause mean
+  something.
+
+Until registration, the privacy policy would have to name two private
+individuals as the processors of patient data. That is legal, but it is a hard
+sell to a clinic's procurement.
+
+**B. Use a domain address, not Gmail.** You own koli-ai.com, so
+`privacy@koli-ai.com` costs nothing and reads as a business. A Gmail address on
+a privacy policy undercuts the same trust the page exists to build.
+
+**C. Remove the WhatsApp claims until WhatsApp works.** See section J.
 
 ---
 
@@ -88,9 +109,16 @@ longer than you need.
 
 ## F. Storage and security (proposed)
 
-15. Data is stored in the **EU region** of each provider. Pick a region per
-    vendor and record it, since "the cloud" is not an answer to a clinic's
-    procurement question.
+15. **Caller data leaves Israel.** ElevenLabs, OpenAI and Twilio all process in
+    the United States, so an EU-or-Israel-only claim is not available and must
+    not be made. The policy states plainly that call audio and transcripts are
+    processed by US-based providers. Two things to settle:
+    - Confirm each vendor contract excludes your data from model training.
+      OpenAI's API excludes it by default; verify ElevenLabs separately rather
+      than assuming.
+    - Check where Zadarma routes and stores call data before naming it to a
+      clinic. Ownership and routing for budget telephony providers are worth
+      knowing in advance, not during a procurement review.
 16. Encrypted in transit (TLS) and at rest.
 17. Access is limited to named Koli staff who need it, with no shared logins.
 18. A breach affecting caller data is reported to the affected clinics within
@@ -119,12 +147,49 @@ longer than you need.
 25. Billing: monthly, in advance. Either side may cancel with **30 days'**
     notice. No lock-in.
 26. Liability is capped at fees paid in the preceding 12 months — standard, and
-    your lawyer will likely propose exactly this.
+    your lawyer will likely propose exactly this. Note that this clause is
+    close to worthless while there is no company: a court can look past it to
+    Eden and Eitan personally. See A1.
 27. Governing law: Israel. Jurisdiction: the courts of Tel Aviv.
+
+---
+
+## J. The site currently claims WhatsApp support
+
+There is no WhatsApp Business API provider, so the product cannot answer
+WhatsApp messages. The site says it can, in at least these places:
+
+| Where | Claim |
+|---|---|
+| Homepage meta description | "מוקד קבלה דיגיטלי ... שמדבר בכל שפה" + WhatsApp in FAQ |
+| `components/faq.tsx` | answers "בטלפון וב־WhatsApp" |
+| `components/integrations.tsx` | lists "WhatsApp Business API" as an integration |
+| `components/ticker.tsx` | "WhatsApp Business" |
+| `components/live-call.tsx` | demo says "שלחתי אישור ב־WhatsApp" |
+| `lib/industries.ts` | 6+ claims across meta descriptions and body copy |
+| `app/llms.txt/route.ts` | "עונה לטלפון וב-WhatsApp 24/7" |
+
+This is advertising a capability that does not exist, to clinics, in writing.
+It is also now in the meta descriptions and structured data, so it is what
+Google and AI assistants will repeat.
+
+Note on provenance: the homepage claims predate this work, but the industry
+pages and llms.txt propagated them, written on the assumption the homepage was
+accurate. That was my error.
+
+**Two ways out.** Either ship WhatsApp, or strip the claims until it ships.
+Stripping is roughly an hour of copy edits and costs one differentiator;
+leaving it is a misrepresentation that a single prospect can catch in a demo.
+
+The WhatsApp contact buttons are unaffected — those link to your own number and
+work exactly as advertised.
 
 ## I. Publishing checklist
 
-- [ ] Section A filled in with real values
+- [ ] Business registered (see A1) — blocks invoicing and the liability cap
+- [ ] WhatsApp claims either shipped or removed (see J)
+- [ ] privacy@koli-ai.com in place of the Gmail address
+- [ ] Vendor split in section A confirmed
 - [ ] Items 1–3 true (DPA template exists and is signed)
 - [ ] Items 7–8 true (the call opening actually says it)
 - [ ] Items 10–14 true (deletion is automated, not a manual promise)
