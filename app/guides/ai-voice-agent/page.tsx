@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { ArticlePage, Section, articleJsonLd } from "@/components/article-page"
 import { AudioDemo } from "@/components/audio-demo"
-import { CLIPS, SITE_URL } from "@/lib/site"
+import { CLIPS, SITE_URL, transcriptText } from "@/lib/site"
 
 const TITLE = "מה זה סוכן AI קולי ואיך הוא עובד"
 const DESCRIPTION =
@@ -32,6 +32,7 @@ export default function VoiceAgentGuide() {
                   contentUrl: `${SITE_URL}${CLIPS.full.src}`,
                   encodingFormat: "audio/mpeg",
                   duration: CLIPS.full.iso,
+                  transcript: transcriptText(CLIPS.full.transcript),
                   inLanguage: "he-IL",
                 },
               ],

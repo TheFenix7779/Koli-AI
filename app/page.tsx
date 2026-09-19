@@ -1,4 +1,4 @@
-import { CLIPS, HOME_UPDATED, SITE_URL } from "@/lib/site"
+import { CLIPS, HOME_UPDATED, SITE_URL, transcriptText } from "@/lib/site"
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { Ticker } from "@/components/ticker"
@@ -33,6 +33,7 @@ const JSON_LD = {
       contentUrl: `${SITE_URL}${c.src}`,
       encodingFormat: "audio/mpeg",
       duration: c.iso,
+      transcript: transcriptText(c.transcript),
       inLanguage: "he-IL",
       isPartOf: { "@id": `${SITE_URL}/#webpage` },
     })),

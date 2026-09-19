@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { track } from "@vercel/analytics"
-import { Play, Pause } from "lucide-react"
+import { Play, Pause, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { CLIPS, type Clip } from "@/lib/site"
 import { WHATSAPP_URL } from "@/lib/contact"
@@ -157,6 +157,36 @@ export function AudioDemo({
         </div>
       </div>
     </div>
+
+      <details className="group">
+        <summary
+          className={cn(
+            "flex w-fit cursor-pointer list-none items-center gap-1 text-[12px] underline-offset-4 hover:underline",
+            light ? "text-cloud/80" : "text-muted",
+          )}
+        >
+          <ChevronDown className="size-3.5 transition-transform duration-200 group-open:rotate-180" />
+          תמלול ההקלטה
+        </summary>
+        <div
+          className={cn(
+            "mt-2 flex max-h-72 flex-col gap-2 overflow-y-auto rounded-cards p-3 text-[13px] leading-relaxed",
+            light ? "bg-void/30 text-cloud/85" : "bg-surface-2 text-ink-2",
+          )}
+        >
+          <p className={cn("text-[11px]", light ? "text-cloud/60" : "text-faint")}>
+            תמלול אוטומטי, כפי שהופק מההקלטה. הוא עלול להכיל שגיאות זיהוי.
+          </p>
+          {clip.transcript.map(([at, text]) => (
+            <p key={at} className="flex gap-3">
+              <span className={cn("ltr shrink-0 font-mono text-[11px] tabular-nums", light ? "text-cloud/60" : "text-faint")}>
+                {at}
+              </span>
+              <span>{text}</span>
+            </p>
+          ))}
+        </div>
+      </details>
 
       <p className={cn("text-[12px] leading-relaxed", light ? "text-cloud/60" : "text-faint")}>
         בהקלטה העברית לא יוצאת מושלמת. בשיחה חיה היא נשמעת טבעית הרבה יותר —{" "}
