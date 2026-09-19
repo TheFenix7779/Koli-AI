@@ -34,7 +34,7 @@ export function Capabilities() {
           </h2>
         </div>
         <p className="max-w-sm font-light text-subheading text-muted">
-          כל מה שרצפציה אנושית עושה — ועוד קצת. בלי הפסקות, בלי חופשות, בלי לשכוח.
+          כל מה שחוזר על עצמו בטלפון, בלי הפסקות ובלי חופשות — כדי שהצוות יתפנה למה שבאמת דורש אדם.
         </p>
       </Reveal>
 

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { MessageCircle, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PhoneLink, WhatsAppLink } from "@/components/contact-link"
@@ -46,6 +47,13 @@ export function FinalCta() {
             </PhoneLink>
           </Button>
         </div>
+
+        <p className="text-body-sm text-cloud/70">
+          רוצים קודם להבין כמה זה עולה?{" "}
+          <Link href="/pricing" className="text-pure underline-offset-4 hover:underline">
+            מה מרכיב את המחיר
+          </Link>
+        </p>
       </Reveal>
     </section>
   )

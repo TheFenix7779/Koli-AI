@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { ArrowLeft, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { WhatsAppLink } from "@/components/contact-link"
@@ -41,7 +42,8 @@ export function Hero() {
 
           <p className="animate-fade-in delay-200 max-w-xl text-balance font-light text-subheading text-muted opacity-0 md:text-xl">
             מזכירה וירטואלית מבוססת בינה מלאכותית שמדברת בכל שפה, קובעת תורים ישירות ביומן, מזהה
-            מקרים דחופים ומעדכנת את הצוות — עשרים וארבע שעות ביממה, בלי לשכור אף אחד.
+            מקרים דחופים ומעדכנת את הצוות — עשרים וארבע שעות ביממה. לא במקום הצוות שלכם, אלא
+            בשיחות שאף אחד לא מספיק לענות להן.
           </p>
 
           <div className="animate-fade-in delay-300 flex w-full flex-col gap-3 opacity-0 sm:w-auto sm:flex-row">
@@ -58,6 +60,15 @@ export function Hero() {
               </a>
             </Button>
           </div>
+
+          {/* The only first-party proof we have — it belongs above the fold, not on /about. */}
+          <p className="animate-fade-in delay-400 text-body-sm text-muted opacity-0">
+            מרפאת שיניים באזור המרכז ענתה עם קולי לכ־<strong className="text-ink-2">29 שיחות יותר</strong>{" "}
+            בחודש הראשון מאשר בחודש שלפניו.{" "}
+            <Link href="/about" className="text-accent underline-offset-4 hover:underline">
+              מה המספר הזה אומר ומה לא
+            </Link>
+          </p>
 
           <ul className="animate-fade-in delay-500 flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-faint opacity-0">
             <li>ללא התחייבות</li>
