@@ -105,17 +105,24 @@ export function Section({ heading, children }: { heading: string; children: Reac
   )
 }
 
+/** Bump when a guide's copy changes. */
+const CONTENT_DATE = "2026-09-19"
+
 /** Article + breadcrumb JSON-LD, matching the graph nodes in the root layout. */
 export function articleJsonLd({
   title,
   description,
   path,
   section,
+  published = CONTENT_DATE,
+  modified = CONTENT_DATE,
 }: {
   title: string
   description: string
   path: string
   section: string
+  published?: string
+  modified?: string
 }) {
   const url = `https://koli-ai.com${path}`
   return {
@@ -128,6 +135,9 @@ export function articleJsonLd({
         url,
         inLanguage: "he-IL",
         articleSection: section,
+        datePublished: published,
+        dateModified: modified,
+        image: "https://koli-ai.com/opengraph-image",
         author: { "@id": "https://koli-ai.com/#organization" },
         publisher: { "@id": "https://koli-ai.com/#organization" },
       },

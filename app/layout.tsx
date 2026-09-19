@@ -40,7 +40,7 @@ const JSON_LD = {
       name: "קולי AI",
       alternateName: "Koli AI",
       url: SITE_URL,
-      logo: `${SITE_URL}/icon`,
+      logo: `${SITE_URL}/logo`,
       telephone: "+972-55-564-8222",
       contactPoint: [
         {
@@ -62,6 +62,7 @@ const JSON_LD = {
     },
     {
       "@type": "Service",
+      "@id": `${SITE_URL}/#service`,
       name: "מוקד קבלה דיגיטלי מבוסס AI",
       serviceType: "AI digital receptionist",
       description: DESCRIPTION,
