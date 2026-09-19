@@ -31,7 +31,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={theme === "dark" ? "עבור למצב בהיר" : "עבור למצב כהה"}
-      className="flex size-11 cursor-pointer items-center justify-center rounded-lg border border-line text-ink transition-colors duration-200 hover:bg-surface-2"
+      className="flex size-12 cursor-pointer items-center justify-center rounded-lg border border-line text-ink transition-colors duration-200 hover:bg-surface-2"
     >
       {theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
     </button>

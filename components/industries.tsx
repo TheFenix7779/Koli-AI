@@ -2,12 +2,14 @@
 
 import { useState } from "react"
 import { Smile, Stethoscope, Sparkles, Scale, Building2, Pill, Mic } from "lucide-react"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Reveal } from "./reveal"
 
 const INDUSTRIES = [
   {
     id: "dental",
+    slug: "dental-clinics",
     icon: Smile,
     name: "מרפאות שיניים",
     tagline: "תורים, תזכורות ושאלות על טיפולים — בלי להוריד את הכפפות.",
@@ -16,6 +18,7 @@ const INDUSTRIES = [
   },
   {
     id: "clinic",
+    slug: "medical-clinics",
     icon: Stethoscope,
     name: "קליניקות רפואיות",
     tagline: "מיון פניות, קביעת תורים והפניה לרופא הנכון — כבר מהשיחה הראשונה.",
@@ -24,6 +27,7 @@ const INDUSTRIES = [
   },
   {
     id: "spa",
+    slug: "aesthetics-spa",
     icon: Sparkles,
     name: "אסתטיקה וספא",
     tagline: "הזמנת טיפולים, מחירון וזמינות — בטון רגוע, גם כשהעומס לא.",
@@ -32,6 +36,7 @@ const INDUSTRIES = [
   },
   {
     id: "law",
+    slug: "law-firms",
     icon: Scale,
     name: "משרדי עורכי דין",
     tagline: "מיון לידים וקביעת פגישות ראשוניות — דיסקרטי, מדויק, מתועד.",
@@ -40,6 +45,7 @@ const INDUSTRIES = [
   },
   {
     id: "realestate",
+    slug: "real-estate",
     icon: Building2,
     name: "סוכנויות נדל״ן",
     tagline: "מענה מיידי ללידים נכנסים ותיאום ביקורים — לפני שהם מתקשרים למתחרה.",
@@ -48,6 +54,7 @@ const INDUSTRIES = [
   },
   {
     id: "pharmacy",
+    slug: "pharmacies",
     icon: Pill,
     name: "בתי מרקחת",
     tagline: "שעות פתיחה, זמינות תרופות ושאלות חוזרות — בלי לעצור את התור בדלפק.",
@@ -137,6 +144,13 @@ export function Industries() {
                 </div>
               </div>
             </div>
+
+            <Link
+              href={`/industries/${current.slug}`}
+              className="w-fit text-body text-accent underline-offset-4 hover:underline"
+            >
+              קראו עוד על {current.name} ←
+            </Link>
           </div>
         </div>
       </div>

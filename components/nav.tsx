@@ -51,7 +51,7 @@ export function Nav() {
             </div>
             <button
               type="button"
-              className="flex size-11 items-center justify-center rounded-lg text-ink transition-colors duration-200 hover:bg-surface-2 md:hidden"
+              className="flex size-12 items-center justify-center rounded-lg text-ink transition-colors duration-200 hover:bg-surface-2 md:hidden"
               aria-label={open ? "סגור תפריט" : "פתח תפריט"}
               aria-expanded={open}
               aria-controls="mobile-menu"
