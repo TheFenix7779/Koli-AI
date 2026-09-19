@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { Lock, Mic } from "lucide-react"
 import { INDUSTRIES } from "@/lib/industries"
+import { PhoneLink } from "@/components/contact-link"
+import { PHONE_DISPLAY } from "@/lib/contact"
 
 export function Footer() {
   return (
@@ -20,9 +22,9 @@ export function Footer() {
           <nav aria-label="קישורים משפטיים" className="flex flex-wrap items-center gap-x-6 gap-y-2 text-body-sm text-cloud/70">
             <a href="#" className="transition-colors duration-200 hover:text-pure">מדיניות פרטיות</a>
             <a href="#" className="transition-colors duration-200 hover:text-pure">תנאי שימוש</a>
-            <a href="tel:0555648222" className="ltr font-mono tabular-nums transition-colors duration-200 hover:text-pure">
-              055-564-8222
-            </a>
+            <PhoneLink location="footer" className="ltr font-mono tabular-nums transition-colors duration-200 hover:text-pure">
+              {PHONE_DISPLAY}
+            </PhoneLink>
           </nav>
         </div>
 

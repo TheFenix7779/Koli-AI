@@ -1,8 +1,8 @@
 import { ArrowLeft, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { WhatsAppLink } from "@/components/contact-link"
 import { LiveCall } from "./live-call"
 
-const WHATSAPP = "https://wa.me/972555648222"
 
 export function Hero() {
   return (
@@ -46,10 +46,10 @@ export function Hero() {
 
           <div className="animate-fade-in delay-300 flex w-full flex-col gap-3 opacity-0 sm:w-auto sm:flex-row">
             <Button asChild size="lg">
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink location="hero">
                 <MessageCircle />
                 לשמוע דמו ב־WhatsApp
-              </a>
+              </WhatsAppLink>
             </Button>
             <Button asChild size="lg" variant="ghost">
               <a href="#day">

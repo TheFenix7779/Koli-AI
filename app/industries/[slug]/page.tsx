@@ -4,9 +4,10 @@ import { notFound } from "next/navigation"
 import { MessageCircle, Mic, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { INDUSTRIES, getIndustry } from "@/lib/industries"
+import { PhoneLink, WhatsAppLink } from "@/components/contact-link"
+import { PHONE_DISPLAY } from "@/lib/contact"
 
 const SITE_URL = "https://koli-ai.com"
-const WHATSAPP = "https://wa.me/972555648222"
 
 type Params = { slug: string }
 
@@ -83,10 +84,10 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
           <p className="text-body text-muted">{industry.intro}</p>
           <div>
             <Button asChild size="lg">
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+              <WhatsAppLink location={`industry:${industry.slug}`}>
                 <MessageCircle />
                 שיחת היכרות ב־WhatsApp
-              </a>
+              </WhatsAppLink>
             </Button>
           </div>
         </section>
@@ -183,9 +184,9 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
           <Link href="/" className="hover:text-ink">
             קולי AI
           </Link>
-          <a href="tel:0555648222" className="ltr font-mono tabular-nums hover:text-ink">
-            055-564-8222
-          </a>
+          <PhoneLink location={`industry:${industry.slug}`} className="ltr font-mono tabular-nums hover:text-ink">
+            {PHONE_DISPLAY}
+          </PhoneLink>
         </div>
       </footer>
     </>

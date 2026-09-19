@@ -1,8 +1,9 @@
 import { MessageCircle, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PhoneLink, WhatsAppLink } from "@/components/contact-link"
+import { PHONE_DISPLAY } from "@/lib/contact"
 import { Reveal } from "./reveal"
 
-const WHATSAPP = "https://wa.me/972555648222"
 
 export function FinalCta() {
   return (
@@ -28,10 +29,10 @@ export function FinalCta() {
         </p>
         <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
           <Button asChild size="lg" className="w-full bg-pure text-void hover:bg-cloud sm:w-auto">
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+            <WhatsAppLink location="final-cta">
               <MessageCircle />
               פתחו WhatsApp
-            </a>
+            </WhatsAppLink>
           </Button>
           <Button
             asChild
@@ -39,10 +40,10 @@ export function FinalCta() {
             variant="ghost"
             className="w-full border-pure/60 text-pure hover:bg-pure/10 sm:w-auto"
           >
-            <a href="tel:0555648222">
+            <PhoneLink location="final-cta">
               <Phone />
-              <span className="ltr font-mono tabular-nums">055-564-8222</span>
-            </a>
+              <span className="ltr font-mono tabular-nums">{PHONE_DISPLAY}</span>
+            </PhoneLink>
           </Button>
         </div>
       </Reveal>
