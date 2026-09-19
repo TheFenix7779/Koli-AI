@@ -1,0 +1,498 @@
+{
+  "pillar": {
+    "title": "דף הבית — קולי AI",
+    "keyword": "מזכירה וירטואלית AI",
+    "volume": null,
+    "template": "landing-page",
+    "wordCount": 872,
+    "url": "/",
+    "note": "הפילר כבר קיים. ה-SERP של מונח הראש מחזיר עמודי ספקים, לא מדריכים, ולכן דף הבית הוא היעד הנכון ומדריך נפרד היה מתחרה בו."
+  },
+  "clusters": [
+    {
+      "name": "ליבה: מזכירה וירטואלית",
+      "color": "#4E79A7",
+      "evidence": "עמוד המחיר חולק 5 תוצאות עם מונח הראש, ועמוד מרפאות השיניים חולק 4. שניהם בטווח 'אותו אשכול'.",
+      "posts": [
+        {
+          "title": "כמה עולה מזכירה וירטואלית AI",
+          "keyword": "כמה עולה מזכירה וירטואלית AI",
+          "volume": null,
+          "template": "explainer",
+          "wordCount": 1400,
+          "url": "/pricing",
+          "status": "planned"
+        },
+        {
+          "title": "מרפאות שיניים",
+          "keyword": "מזכירה וירטואלית למרפאות שיניים",
+          "volume": null,
+          "template": "landing-page",
+          "wordCount": 340,
+          "url": "/industries/dental-clinics",
+          "status": "written"
+        },
+        {
+          "title": "קליניקות רפואיות",
+          "keyword": "מזכירה וירטואלית לקליניקות רפואיות",
+          "volume": null,
+          "template": "landing-page",
+          "wordCount": 340,
+          "url": "/industries/medical-clinics",
+          "status": "written"
+        },
+        {
+          "title": "אסתטיקה וספא",
+          "keyword": "מזכירה וירטואלית לאסתטיקה וספא",
+          "volume": null,
+          "template": "landing-page",
+          "wordCount": 340,
+          "url": "/industries/aesthetics-spa",
+          "status": "written"
+        },
+        {
+          "title": "משרדי עורכי דין",
+          "keyword": "מזכירה וירטואלית למשרדי עורכי דין",
+          "volume": null,
+          "template": "landing-page",
+          "wordCount": 340,
+          "url": "/industries/law-firms",
+          "status": "written"
+        },
+        {
+          "title": "סוכנויות נדל״ן",
+          "keyword": "מזכירה וירטואלית לסוכנויות נדל״ן",
+          "volume": null,
+          "template": "landing-page",
+          "wordCount": 340,
+          "url": "/industries/real-estate",
+          "status": "written"
+        },
+        {
+          "title": "בתי מרקחת",
+          "keyword": "מזכירה וירטואלית לבתי מרקחת",
+          "volume": null,
+          "template": "landing-page",
+          "wordCount": 340,
+          "url": "/industries/pharmacies",
+          "status": "written"
+        }
+      ]
+    },
+    {
+      "name": "סוכן AI קולי",
+      "color": "#F28E2B",
+      "evidence": "רק 2 תוצאות משותפות עם מונח הראש, ומערך ספקים שונה לגמרי (Paycall, Yappr, Optimate, Zudu). מרחב מונחים נפרד שהאתר לא נוגע בו כרגע.",
+      "posts": [
+        {
+          "title": "מה זה סוכן AI קולי ואיך הוא עובד",
+          "keyword": "סוכן AI קולי",
+          "volume": null,
+          "template": "explainer",
+          "wordCount": 1600,
+          "url": "/guides/ai-voice-agent",
+          "status": "planned"
+        },
+        {
+          "title": "בוט קולי בעברית: מה באמת עובד",
+          "keyword": "בוט קולי בעברית",
+          "volume": null,
+          "template": "how-to",
+          "wordCount": 1300,
+          "url": "/guides/hebrew-voice-bot",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "name": "חלופה למענה אנושי",
+      "color": "#59A14F",
+      "evidence": "תוצאה משותפת אחת בלבד עם מונח הראש — SERP נפרד של מוקדי מענה אנושי (טלקול, קישורית, שידורית) ואתרי השוואה. זה הקטגוריה שקולי מחליפה בפועל.",
+      "posts": [
+        {
+          "title": "מענה אנושי לעסקים מול מזכירה AI",
+          "keyword": "מענה אנושי לעסקים",
+          "volume": null,
+          "template": "comparison",
+          "wordCount": 1500,
+          "url": "/compare/human-answering-service",
+          "status": "planned"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "keyword": "ביטולי תורים / אי הגעה במרפאה",
+      "overlap_with_head": 0,
+      "reason": "ה-SERP מורכב כולו ממערכות לניהול וזימון תורים (Tor4You, Easybizy, שידורית). עמוד של קולי היה מתחרה בסוג עמוד אחר לגמרי. מבטל את המלצת התוכן הקודמת שלי בנושא no-show."
+    },
+    {
+      "keyword": "מזכירה AI מול מזכירה אנושית",
+      "overlap_with_head": 0,
+      "reason": "השאילתה בעברית מחזירה תוכן גנרי באנגלית על AI secretaries. אין כוונה מסחרית ישראלית. הוחלף בניסוח 'מענה אנושי לעסקים', שיש לו SERP ישראלי אמיתי."
+    }
+  ],
+  "links": [
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-0",
+      "type": "mandatory",
+      "anchor": "כמה עולה מזכירה וירטואלית AI"
+    },
+    {
+      "from": "cluster-0-post-0",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-1",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית למרפאות שיניים"
+    },
+    {
+      "from": "cluster-0-post-1",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-2",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית לקליניקות רפואיות"
+    },
+    {
+      "from": "cluster-0-post-2",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-3",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית לאסתטיקה וספא"
+    },
+    {
+      "from": "cluster-0-post-3",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-4",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית למשרדי עורכי דין"
+    },
+    {
+      "from": "cluster-0-post-4",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-5",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית לסוכנויות נדל״ן"
+    },
+    {
+      "from": "cluster-0-post-5",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-0-post-6",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית לבתי מרקחת"
+    },
+    {
+      "from": "cluster-0-post-6",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "cluster-0-post-0",
+      "to": "cluster-0-post-1",
+      "type": "sibling",
+      "anchor": "מזכירה וירטואלית למרפאות שיניים"
+    },
+    {
+      "from": "cluster-0-post-1",
+      "to": "cluster-0-post-2",
+      "type": "sibling",
+      "anchor": "מזכירה וירטואלית לקליניקות רפואיות"
+    },
+    {
+      "from": "cluster-0-post-2",
+      "to": "cluster-0-post-3",
+      "type": "sibling",
+      "anchor": "מזכירה וירטואלית לאסתטיקה וספא"
+    },
+    {
+      "from": "cluster-0-post-3",
+      "to": "cluster-0-post-4",
+      "type": "sibling",
+      "anchor": "מזכירה וירטואלית למשרדי עורכי דין"
+    },
+    {
+      "from": "cluster-0-post-4",
+      "to": "cluster-0-post-5",
+      "type": "sibling",
+      "anchor": "מזכירה וירטואלית לסוכנויות נדל״ן"
+    },
+    {
+      "from": "cluster-0-post-5",
+      "to": "cluster-0-post-6",
+      "type": "sibling",
+      "anchor": "מזכירה וירטואלית לבתי מרקחת"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-1-post-0",
+      "type": "mandatory",
+      "anchor": "סוכן AI קולי"
+    },
+    {
+      "from": "cluster-1-post-0",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-1-post-1",
+      "type": "mandatory",
+      "anchor": "בוט קולי בעברית"
+    },
+    {
+      "from": "cluster-1-post-1",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "cluster-1-post-0",
+      "to": "cluster-1-post-1",
+      "type": "sibling",
+      "anchor": "בוט קולי בעברית"
+    },
+    {
+      "from": "pillar",
+      "to": "cluster-2-post-0",
+      "type": "mandatory",
+      "anchor": "מענה אנושי לעסקים"
+    },
+    {
+      "from": "cluster-2-post-0",
+      "to": "pillar",
+      "type": "mandatory",
+      "anchor": "מזכירה וירטואלית AI"
+    },
+    {
+      "from": "cluster-1-post-0",
+      "to": "cluster-0-post-0",
+      "type": "cross",
+      "anchor": "כמה עולה מזכירה וירטואלית AI"
+    },
+    {
+      "from": "cluster-2-post-0",
+      "to": "cluster-0-post-0",
+      "type": "cross",
+      "anchor": "כמה עולה מזכירה וירטואלית AI"
+    }
+  ],
+  "meta": {
+    "totalPosts": 11,
+    "totalClusters": 3,
+    "totalLinks": 29,
+    "estimatedWords": 8712,
+    "plannedWords": 5800,
+    "generated": "2026-09-19",
+    "serpSource": "WebSearch (US endpoint) — see caveat in cluster-plan.md"
+  },
+  "serp_overlap_matrix": [
+    {
+      "a": "מזכירה וירטואלית AI",
+      "b": "כמה עולה מזכירה וירטואלית AI",
+      "shared": 5,
+      "relationship": "same cluster",
+      "shared_urls": [
+        "automaziot.ai",
+        "getgenie.co.il",
+        "juba.digital",
+        "mazkira.co.il",
+        "mrbot.ai"
+      ]
+    },
+    {
+      "a": "מזכירה וירטואלית AI",
+      "b": "מזכירה וירטואלית למרפאת שיניים",
+      "shared": 4,
+      "relationship": "same cluster",
+      "shared_urls": [
+        "clinicwiseai.com",
+        "comix-flow.com",
+        "juba.digital",
+        "mrbot.ai"
+      ]
+    },
+    {
+      "a": "מזכירה וירטואלית AI",
+      "b": "סוכן AI קולי / בוט טלפוני",
+      "shared": 2,
+      "relationship": "interlink",
+      "shared_urls": [
+        "automaziot.ai",
+        "mrbot.ai"
+      ]
+    },
+    {
+      "a": "מזכירה וירטואלית AI",
+      "b": "מענה אנושי לעסקים",
+      "shared": 1,
+      "relationship": "separate",
+      "shared_urls": [
+        "vcall.co.il"
+      ]
+    },
+    {
+      "a": "מזכירה וירטואלית AI",
+      "b": "ביטולי תורים / אי הגעה במרפאה",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "מזכירה וירטואלית AI",
+      "b": "מזכירה AI מול מזכירה אנושית",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "כמה עולה מזכירה וירטואלית AI",
+      "b": "מזכירה וירטואלית למרפאת שיניים",
+      "shared": 3,
+      "relationship": "interlink",
+      "shared_urls": [
+        "arthurmeltser.co.il",
+        "juba.digital",
+        "mrbot.ai"
+      ]
+    },
+    {
+      "a": "כמה עולה מזכירה וירטואלית AI",
+      "b": "סוכן AI קולי / בוט טלפוני",
+      "shared": 3,
+      "relationship": "interlink",
+      "shared_urls": [
+        "automaziot.ai",
+        "mrbot.ai",
+        "stsiconic.com"
+      ]
+    },
+    {
+      "a": "כמה עולה מזכירה וירטואלית AI",
+      "b": "מענה אנושי לעסקים",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "כמה עולה מזכירה וירטואלית AI",
+      "b": "ביטולי תורים / אי הגעה במרפאה",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "כמה עולה מזכירה וירטואלית AI",
+      "b": "מזכירה AI מול מזכירה אנושית",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "מזכירה וירטואלית למרפאת שיניים",
+      "b": "סוכן AI קולי / בוט טלפוני",
+      "shared": 1,
+      "relationship": "separate",
+      "shared_urls": [
+        "mrbot.ai"
+      ]
+    },
+    {
+      "a": "מזכירה וירטואלית למרפאת שיניים",
+      "b": "מענה אנושי לעסקים",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "מזכירה וירטואלית למרפאת שיניים",
+      "b": "ביטולי תורים / אי הגעה במרפאה",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "מזכירה וירטואלית למרפאת שיניים",
+      "b": "מזכירה AI מול מזכירה אנושית",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "סוכן AI קולי / בוט טלפוני",
+      "b": "מענה אנושי לעסקים",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "סוכן AI קולי / בוט טלפוני",
+      "b": "ביטולי תורים / אי הגעה במרפאה",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "סוכן AI קולי / בוט טלפוני",
+      "b": "מזכירה AI מול מזכירה אנושית",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "מענה אנושי לעסקים",
+      "b": "ביטולי תורים / אי הגעה במרפאה",
+      "shared": 1,
+      "relationship": "separate",
+      "shared_urls": [
+        "shidurit-ltd.co.il"
+      ]
+    },
+    {
+      "a": "מענה אנושי לעסקים",
+      "b": "מזכירה AI מול מזכירה אנושית",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    },
+    {
+      "a": "ביטולי תורים / אי הגעה במרפאה",
+      "b": "מזכירה AI מול מזכירה אנושית",
+      "shared": 0,
+      "relationship": "separate",
+      "shared_urls": []
+    }
+  ]
+}
