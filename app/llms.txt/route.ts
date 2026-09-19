@@ -13,6 +13,7 @@ export function GET() {
 ${pages.join("\n")}
 
 ## מדריכים
+- [מי עומד מאחורי קולי AI](https://koli-ai.com/about): מי מפעיל את השירות, על אילו טכנולוגיות הוא בנוי ומה הוא לא עושה
 - [כמה עולה מזכירה וירטואלית AI](https://koli-ai.com/pricing): מה מרכיב את המחיר ואיך להשוות אותו לעלות המלאה של מזכירה
 - [מענה אנושי לעסקים מול מזכירה AI](https://koli-ai.com/compare/human-answering-service): השוואה בין מוקד מענה אנושי חיצוני למערכת AI
 - [מה זה סוכן AI קולי](https://koli-ai.com/guides/ai-voice-agent): איך עובדת שיחה קולית מבוססת AI, ואיפה היא לא מתאימה

@@ -144,6 +144,29 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
           </div>
         </section>
 
+        <section aria-labelledby="setup" className="flex flex-col gap-8">
+          <h2 id="setup" className="display-serif text-[32px] leading-tight text-ink sm:text-5xl">
+            מה מגדירים לפני שמתחילים
+          </h2>
+          <p className="max-w-2xl text-body text-muted">
+            איכות המענה נקבעת כמעט כולה במידע שקולי מקבלת מראש. ב{industry.name} זה בדרך כלל אומר:
+          </p>
+          <ul className="flex flex-col gap-3">
+            {industry.setup.map((s) => (
+              <li
+                key={s}
+                className="flex gap-3 rounded-tiles border border-line bg-surface p-5 text-body-sm text-ink-2"
+              >
+                <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" />
+                {s}
+              </li>
+            ))}
+          </ul>
+          <p className="max-w-2xl text-body-sm text-muted">
+            את הרשימה הזאת עוברים יחד בשיחת ההיכרות, ואפשר לעדכן אותה בכל שלב.
+          </p>
+        </section>
+
         <section aria-labelledby="faq" className="flex flex-col gap-8">
           <h2 id="faq" className="display-serif text-[32px] leading-tight text-ink sm:text-5xl">
             שאלות נפוצות

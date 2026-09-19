@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `https://koli-ai.com/industries/${i.slug}`,
       lastModified: i.updated,
     })),
+    { url: "https://koli-ai.com/about", lastModified: CONTENT_UPDATED },
     { url: "https://koli-ai.com/pricing", lastModified: CONTENT_UPDATED },
     { url: "https://koli-ai.com/compare/human-answering-service", lastModified: CONTENT_UPDATED },
     { url: "https://koli-ai.com/guides/ai-voice-agent", lastModified: CONTENT_UPDATED },
