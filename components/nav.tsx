@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
-import { Menu, X, Mic } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
+import { Menu, X, Mic, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { GUIDES } from "@/lib/guides"
 import { ThemeToggle } from "./theme-toggle"
 
 const LINKS = [
@@ -11,6 +13,68 @@ const LINKS = [
   { label: "למי זה מתאים", href: "#industries" },
   { label: "שאלות", href: "#faq" },
 ]
+
+/** Desktop dropdown for the guide and pricing pages. */
+function GuidesMenu() {
+  const [open, setOpen] = useState(false)
+  const wrap = useRef<HTMLLIElement>(null)
+  const trigger = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    function onPointerDown(e: PointerEvent) {
+      if (!wrap.current?.contains(e.target as Node)) setOpen(false)
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false)
+        trigger.current?.focus()
+      }
+    }
+    document.addEventListener("pointerdown", onPointerDown)
+    document.addEventListener("keydown", onKeyDown)
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown)
+      document.removeEventListener("keydown", onKeyDown)
+    }
+  }, [open])
+
+  return (
+    <li ref={wrap} className="relative">
+      <button
+        ref={trigger}
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-controls="guides-menu"
+        onClick={() => setOpen((v) => !v)}
+        className="flex cursor-pointer items-center gap-1 rounded-lg px-3.5 py-2 text-body text-muted transition-colors duration-200 hover:bg-surface-2 hover:text-ink"
+      >
+        מדריכים
+        <ChevronDown className={`size-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <ul
+          id="guides-menu"
+          className="absolute end-0 top-full z-50 mt-2 min-w-60 overflow-hidden rounded-cards border border-line bg-canvas p-1.5 shadow-xl"
+        >
+          {GUIDES.map((g) => (
+            <li key={g.href}>
+              <Link
+                href={g.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-lg px-3.5 py-2.5 text-body-sm text-ink-2 transition-colors duration-200 hover:bg-surface-2 hover:text-ink"
+              >
+                {g.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  )
+}
 
 export function Nav() {
   const [open, setOpen] = useState(false)
@@ -40,6 +104,7 @@ export function Nav() {
                 </a>
               </li>
             ))}
+            <GuidesMenu />
           </ul>
 
           <div className="flex items-center gap-2">
@@ -76,6 +141,23 @@ export function Nav() {
                   </a>
                 </li>
               ))}
+
+              {/* Flattened on mobile: a nested dropdown inside a drawer is worse than a labelled group. */}
+              <li className="mt-2 border-t border-line pt-3">
+                <span className="mono-label block px-3.5 text-faint">מדריכים</span>
+              </li>
+              {GUIDES.map((g) => (
+                <li key={g.href}>
+                  <Link
+                    href={g.href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-lg px-3.5 py-3 text-subheading text-ink-2 transition-colors duration-200 hover:bg-surface-2"
+                  >
+                    {g.label}
+                  </Link>
+                </li>
+              ))}
+
               <li className="pt-2">
                 <Button asChild className="w-full">
                   <a href="#contact" onClick={() => setOpen(false)}>קבע פגישה</a>
