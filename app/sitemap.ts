@@ -1,8 +1,12 @@
 import type { MetadataRoute } from "next"
 import { INDUSTRIES } from "@/lib/industries"
 
-// Fixed date: `new Date()` would report every page as modified on every build.
-const LAST_MODIFIED = new Date("2026-09-19")
+// Bump when the homepage copy changes. Google only trusts <lastmod> when it
+// tracks real content changes, so this is a hand-maintained date rather than
+// `new Date()`, which would mark every page as modified on every deploy.
+const HOME_UPDATED = "2026-09-19"
+
+// changefreq and priority are deliberately omitted: Google ignores both.
 
 /**
  * Public marketing pages only. /tools is internal and already carries
@@ -10,12 +14,10 @@ const LAST_MODIFIED = new Date("2026-09-19")
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: "https://koli-ai.com", lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 1 },
+    { url: "https://koli-ai.com", lastModified: HOME_UPDATED },
     ...INDUSTRIES.map((i) => ({
       url: `https://koli-ai.com/industries/${i.slug}`,
-      lastModified: LAST_MODIFIED,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
+      lastModified: i.updated,
     })),
   ]
 }

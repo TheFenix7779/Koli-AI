@@ -1,5 +1,7 @@
 export type Industry = {
   slug: string
+  /** Date this page's content last changed. Bump it when you edit the copy. */
+  updated: string
   name: string
   /** Short noun used in titles, e.g. "מזכירה וירטואלית למרפאת שיניים" */
   forPhrase: string
@@ -16,6 +18,7 @@ export type Industry = {
 export const INDUSTRIES: Industry[] = [
   {
     slug: "dental-clinics",
+    updated: "2026-09-19",
     name: "מרפאות שיניים",
     forPhrase: "מזכירה וירטואלית למרפאת שיניים",
     tagline: "תורים, תזכורות ושאלות על טיפולים — בלי להוריד את הכפפות.",
@@ -74,6 +77,7 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     slug: "medical-clinics",
+    updated: "2026-09-19",
     name: "קליניקות רפואיות",
     forPhrase: "מוקד קבלה דיגיטלי לקליניקה רפואית",
     tagline: "מיון פניות, קביעת תורים והפניה לרופא הנכון — כבר מהשיחה הראשונה.",
@@ -132,6 +136,7 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     slug: "aesthetics-spa",
+    updated: "2026-09-19",
     name: "אסתטיקה וספא",
     forPhrase: "מזכירה וירטואלית לקליניקת אסתטיקה וספא",
     tagline: "הזמנת טיפולים, מחירון וזמינות — בטון רגוע, גם כשהעומס לא.",
@@ -190,6 +195,7 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     slug: "law-firms",
+    updated: "2026-09-19",
     name: "משרדי עורכי דין",
     forPhrase: "מוקד קבלה AI למשרד עורכי דין",
     tagline: "מיון לידים וקביעת פגישות ראשוניות — דיסקרטי, מדויק, מתועד.",
@@ -248,6 +254,7 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     slug: "real-estate",
+    updated: "2026-09-19",
     name: "סוכנויות נדל״ן",
     forPhrase: "מוקד מענה AI לסוכנות נדל״ן",
     tagline: "מענה מיידי ללידים נכנסים ותיאום ביקורים — לפני שהם מתקשרים למתחרה.",
@@ -306,6 +313,7 @@ export const INDUSTRIES: Industry[] = [
   },
   {
     slug: "pharmacies",
+    updated: "2026-09-19",
     name: "בתי מרקחת",
     forPhrase: "מענה טלפוני אוטומטי לבית מרקחת",
     tagline: "שעות פתיחה, זמינות תרופות ושאלות חוזרות — בלי לעצור את התור בדלפק.",
