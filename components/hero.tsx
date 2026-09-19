@@ -26,7 +26,7 @@ export function Hero() {
         <div className="flex flex-col items-start gap-8 lg:col-span-7">
           <span className="animate-fade-in mono-label flex items-center gap-3 text-muted opacity-0">
             <span aria-hidden className="animate-pulse-dot size-2 rounded-full bg-cyan-signal" />
-            AI Receptionist · בכל שפה
+            מזכירה וירטואלית AI · בכל שפה
           </span>
 
           <h1
@@ -40,8 +40,8 @@ export function Hero() {
           </h1>
 
           <p className="animate-fade-in delay-200 max-w-xl text-balance font-light text-subheading text-muted opacity-0 md:text-xl">
-            רצפציה מבוססת בינה מלאכותית שמדברת בכל שפה, קובעת תורים ישירות ביומן, מזהה מקרים דחופים
-            ומעדכנת את הצוות — עשרים וארבע שעות ביממה, בלי לשכור אף אחד.
+            מזכירה וירטואלית מבוססת בינה מלאכותית שמדברת בכל שפה, קובעת תורים ישירות ביומן, מזהה
+            מקרים דחופים ומעדכנת את הצוות — עשרים וארבע שעות ביממה, בלי לשכור אף אחד.
           </p>
 
           <div className="animate-fade-in delay-300 flex w-full flex-col gap-3 opacity-0 sm:w-auto sm:flex-row">

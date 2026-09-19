@@ -30,7 +30,7 @@ export function Capabilities() {
           <h2 className="display-serif text-balance text-[40px] leading-[1.02] text-ink sm:text-6xl">
             לא עוד בוט.
             <br />
-            <span className="italic text-accent">רצפציה.</span>
+            <span className="italic text-accent">מזכירה וירטואלית.</span>
           </h2>
         </div>
         <p className="max-w-sm font-light text-subheading text-muted">

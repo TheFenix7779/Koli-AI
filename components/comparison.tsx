@@ -31,7 +31,7 @@ export function Comparison() {
           <div className="lg:col-span-8">
             <div className="hidden grid-cols-[140px_1fr_1fr] gap-x-4 border-b border-line pb-3 sm:grid">
               <span className="mono-label text-faint">&nbsp;</span>
-              <span className="mono-label text-faint">רצפציה מסורתית</span>
+              <span className="mono-label text-faint">מזכירה מסורתית</span>
               <span className="mono-label text-ink">קולי AI</span>
             </div>
             <ul>
