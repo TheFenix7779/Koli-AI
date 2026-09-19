@@ -7,6 +7,9 @@ import { UPDATED_ISO } from "@/lib/legal"
 // `new Date()`, which would mark every page as modified on every deploy.
 const HOME_UPDATED = "2026-09-19"
 
+// Bump per page when its copy changes.
+const CONTENT_UPDATED = "2026-09-19"
+
 // changefreq and priority are deliberately omitted: Google ignores both.
 
 /**
@@ -20,6 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `https://koli-ai.com/industries/${i.slug}`,
       lastModified: i.updated,
     })),
+    { url: "https://koli-ai.com/pricing", lastModified: CONTENT_UPDATED },
+    { url: "https://koli-ai.com/compare/human-answering-service", lastModified: CONTENT_UPDATED },
+    { url: "https://koli-ai.com/guides/ai-voice-agent", lastModified: CONTENT_UPDATED },
+    { url: "https://koli-ai.com/guides/hebrew-voice-bot", lastModified: CONTENT_UPDATED },
     { url: "https://koli-ai.com/privacy", lastModified: UPDATED_ISO },
     { url: "https://koli-ai.com/terms", lastModified: UPDATED_ISO },
   ]

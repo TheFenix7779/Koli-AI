@@ -28,6 +28,13 @@ export function Footer() {
           </nav>
         </div>
 
+        <nav aria-label="מדריכים ומחיר" className="flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-cloud/70">
+          <Link href="/pricing" className="transition-colors duration-200 hover:text-pure">כמה זה עולה</Link>
+          <Link href="/compare/human-answering-service" className="transition-colors duration-200 hover:text-pure">מענה אנושי מול AI</Link>
+          <Link href="/guides/ai-voice-agent" className="transition-colors duration-200 hover:text-pure">מה זה סוכן AI קולי</Link>
+          <Link href="/guides/hebrew-voice-bot" className="transition-colors duration-200 hover:text-pure">בוט קולי בעברית</Link>
+        </nav>
+
         <nav aria-label="תחומי עיסוק" className="flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-cloud/70">
           {INDUSTRIES.map((i) => (
             <Link key={i.slug} href={`/industries/${i.slug}`} className="transition-colors duration-200 hover:text-pure">
