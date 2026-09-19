@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { track } from "@vercel/analytics"
 import { Play, Pause } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { DEMO_AUDIO } from "@/lib/site"
+import { CLIPS, type Clip } from "@/lib/site"
 
 // Fixed heights: a random waveform would differ between server and client and
 // break hydration. 40 bars reads as speech without pretending to be real data.
@@ -25,12 +25,12 @@ function time(s: number) {
  */
 export function AudioDemo({
   location,
-  label = "דמו: קולי עונה לשיחה",
+  clip = CLIPS.short,
   tone = "dark",
   className,
 }: {
   location: string
-  label?: string
+  clip?: Clip
   /** "light" for the always-dark closing section. */
   tone?: "dark" | "light"
   className?: string
@@ -101,7 +101,7 @@ export function AudioDemo({
         className,
       )}
     >
-      <audio ref={ref} src={DEMO_AUDIO} preload="none" />
+      <audio ref={ref} src={clip.src} preload="none" />
 
       <button
         type="button"
@@ -117,7 +117,7 @@ export function AudioDemo({
 
       <div className="flex min-w-0 flex-1 flex-col gap-1.5">
         <div className="flex items-baseline justify-between gap-3">
-          <span className={cn("truncate text-body-sm", light ? "text-pure" : "text-ink-2")}>{label}</span>
+          <span className={cn("truncate text-body-sm", light ? "text-pure" : "text-ink-2")}>{clip.label}</span>
           <span
             className={cn(
               "ltr shrink-0 font-mono text-[11px] tabular-nums",

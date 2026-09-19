@@ -5,6 +5,7 @@ import { PhoneLink, WhatsAppLink } from "@/components/contact-link"
 import { PHONE_DISPLAY } from "@/lib/contact"
 import { Reveal } from "./reveal"
 import { AudioDemo } from "./audio-demo"
+import { CLIPS } from "@/lib/site"
 
 
 export function FinalCta() {
@@ -29,7 +30,7 @@ export function FinalCta() {
         <p className="max-w-lg text-balance font-light text-subheading text-cloud/75">
           שיחת היכרות קצרה ב־WhatsApp. נחזור אליכם תוך דקות — ללא התחייבות, והייעוץ הראשוני עלינו.
         </p>
-        <AudioDemo location="final-cta" tone="light" />
+        <AudioDemo location="final-cta" clip={CLIPS.full} tone="light" />
 
         <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row">
           <Button asChild size="lg" className="w-full bg-pure text-void hover:bg-cloud sm:w-auto">

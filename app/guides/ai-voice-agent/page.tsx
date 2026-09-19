@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { ArticlePage, Section, articleJsonLd } from "@/components/article-page"
+import { AudioDemo } from "@/components/audio-demo"
+import { CLIPS, SITE_URL } from "@/lib/site"
 
 const TITLE = "מה זה סוכן AI קולי ואיך הוא עובד"
 const DESCRIPTION =
@@ -19,7 +21,21 @@ export default function VoiceAgentGuide() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            articleJsonLd({ title: TITLE, description: DESCRIPTION, path: "/guides/ai-voice-agent", section: "מדריך" }),
+            {
+              ...articleJsonLd({ title: TITLE, description: DESCRIPTION, path: "/guides/ai-voice-agent", section: "מדריך" }),
+              "@graph": [
+                ...articleJsonLd({ title: TITLE, description: DESCRIPTION, path: "/guides/ai-voice-agent", section: "מדריך" })["@graph"],
+                {
+                  "@type": "AudioObject",
+                  name: CLIPS.full.label,
+                  description: "הקלטת דוגמה של שיחה מלאה עם קולי AI.",
+                  contentUrl: `${SITE_URL}${CLIPS.full.src}`,
+                  encodingFormat: "audio/mpeg",
+                  duration: CLIPS.full.iso,
+                  inLanguage: "he-IL",
+                },
+              ],
+            },
           ),
         }}
       />
@@ -82,8 +98,9 @@ export default function VoiceAgentGuide() {
             </li>
           </ul>
           <p>
-            כל שלב כאן הוא נקודת כשל אפשרית, ושם נמצא ההבדל האמיתי בין מערכות.
+            כל שלב כאן הוא נקודת כשל אפשרית, ושם נמצא ההבדל האמיתי בין מערכות. כך זה נשמע בפועל:
           </p>
+          <AudioDemo location="guide-voice-agent" clip={CLIPS.full} />
         </Section>
 
         <Section heading="מה מבדיל סוכן טוב מגרוע">

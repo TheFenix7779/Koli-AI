@@ -1,4 +1,4 @@
-import { DEMO_AUDIO, HOME_UPDATED, SITE_URL } from "@/lib/site"
+import { CLIPS, HOME_UPDATED, SITE_URL } from "@/lib/site"
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { Ticker } from "@/components/ticker"
@@ -26,16 +26,16 @@ const JSON_LD = {
       about: { "@id": `${SITE_URL}/#organization` },
       primaryImageOfPage: `${SITE_URL}/opengraph-image`,
     },
-    {
+    ...Object.values(CLIPS).map((c) => ({
       "@type": "AudioObject",
-      name: "דמו: קולי עונה לשיחה",
-      description: "הדגמה של שיחה עם קולי AI, המזכירה הווירטואלית שעונה לטלפון ול-WhatsApp.",
-      contentUrl: `${SITE_URL}${DEMO_AUDIO}`,
+      name: c.label,
+      description: "הקלטת דוגמה של שיחה עם קולי AI, המזכירה הווירטואלית שעונה לטלפון ול-WhatsApp.",
+      contentUrl: `${SITE_URL}${c.src}`,
       encodingFormat: "audio/mpeg",
-      duration: "PT31S",
+      duration: c.iso,
       inLanguage: "he-IL",
       isPartOf: { "@id": `${SITE_URL}/#webpage` },
-    },
+    })),
   ],
 }
 
