@@ -158,8 +158,8 @@ export function AudioDemo({
       </div>
     </div>
 
-      <p className={cn("text-body-sm", light ? "text-cloud/70" : "text-faint")}>
-        ההקלטה עוברת דרך האינטרנט ומאבדת קצת מהאיכות. בשיחה אמיתית קולי נשמעת נקייה יותר —{" "}
+      <p className={cn("text-[12px] leading-relaxed", light ? "text-cloud/60" : "text-faint")}>
+        בהקלטה העברית לא יוצאת מושלמת. בשיחה חיה היא נשמעת טבעית הרבה יותר —{" "}
         <a
           href={WHATSAPP_URL}
           target="_blank"
