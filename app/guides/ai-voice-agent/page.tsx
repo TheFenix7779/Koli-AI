@@ -3,7 +3,7 @@ import { ArticlePage, Section, articleJsonLd } from "@/components/article-page"
 import { AudioDemo } from "@/components/audio-demo"
 import { CLIPS, SITE_URL, transcriptText } from "@/lib/site"
 
-const TITLE = "מה זה סוכן AI קולי ואיך הוא עובד"
+const TITLE = "סוכן קולי AI — מה זה ואיך הוא עובד בעברית"
 const DESCRIPTION =
   "הסבר על סוכן AI קולי: מה קורה בפועל בתוך שיחה, מה מבדיל מערכת טובה מגרועה, למה עברית מסובכת יותר מאנגלית ואיפה סוכן קולי לא מתאים."
 

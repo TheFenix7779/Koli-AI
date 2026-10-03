@@ -6,8 +6,14 @@ import { Button } from "@/components/ui/button"
 import { INDUSTRIES, getIndustry } from "@/lib/industries"
 import { PhoneLink, WhatsAppLink } from "@/components/contact-link"
 import { PHONE_DISPLAY } from "@/lib/contact"
+import { GUIDES } from "@/lib/guides"
 
 const SITE_URL = "https://koli-ai.com"
+
+/** Guides that apply to every vertical, linked from each industry page. */
+const INDUSTRY_GUIDES = GUIDES.filter((g) =>
+  ["/ai-receptionist", "/guides/missed-calls", "/guides/russian-phone-answering", "/guides/arabic-phone-answering"].includes(g.href),
+)
 
 type Params = { slug: string }
 
@@ -195,6 +201,24 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
                   className="inline-flex min-h-11 items-center rounded-lg border border-line px-4 text-body-sm text-ink-2 transition-colors hover:bg-surface-2"
                 >
                   {o.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="guides" className="flex flex-col gap-4">
+          <h2 id="guides" className="mono-label text-muted">
+            מדריכים
+          </h2>
+          <ul className="flex flex-wrap gap-2">
+            {INDUSTRY_GUIDES.map((g) => (
+              <li key={g.href}>
+                <Link
+                  href={g.href}
+                  className="inline-flex min-h-11 items-center rounded-lg border border-line px-4 text-body-sm text-ink-2 transition-colors hover:bg-surface-2"
+                >
+                  {g.label}
                 </Link>
               </li>
             ))}

@@ -32,6 +32,7 @@ export default function HebrewVoiceBotGuide() {
           { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי" },
           { href: "/industries/dental-clinics", label: "מזכירה וירטואלית למרפאת שיניים" },
           { href: "/pricing", label: "כמה עולה מזכירה וירטואלית AI" },
+          { href: "/guides/russian-phone-answering", label: "מענה טלפוני ברוסית" },
         ]}
       >
         <Section heading="שלוש בדיקות שאפשר לעשות בשיחה אחת">

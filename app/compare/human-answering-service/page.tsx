@@ -55,6 +55,7 @@ export default function ComparePage() {
           { href: "/pricing", label: "כמה עולה מזכירה וירטואלית AI" },
           { href: "/industries/medical-clinics", label: "מוקד קבלה AI לקליניקה" },
           { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי" },
+          { href: "/guides/missed-calls", label: "שיחות שלא נענו בעסק" },
         ]}
       >
         <Section heading="מה זה מענה אנושי חיצוני">

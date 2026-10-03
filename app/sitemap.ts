@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next"
 import { INDUSTRIES } from "@/lib/industries"
 import { UPDATED_ISO } from "@/lib/legal"
-import { CONTENT_UPDATED, HOME_UPDATED } from "@/lib/site"
+import { GUIDES } from "@/lib/guides"
+import { HOME_UPDATED } from "@/lib/site"
 
-// Dates are hand-maintained in lib/site.ts. Google only trusts <lastmod> when
+// Dates are hand-maintained in lib/site.ts and lib/guides.ts. Google only trusts <lastmod> when
 // it tracks real content changes, and `new Date()` would mark every page as
 // modified on every deploy.
 
@@ -20,11 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `https://koli-ai.com/industries/${i.slug}`,
       lastModified: i.updated,
     })),
-    { url: "https://koli-ai.com/about", lastModified: CONTENT_UPDATED },
-    { url: "https://koli-ai.com/pricing", lastModified: CONTENT_UPDATED },
-    { url: "https://koli-ai.com/compare/human-answering-service", lastModified: CONTENT_UPDATED },
-    { url: "https://koli-ai.com/guides/ai-voice-agent", lastModified: CONTENT_UPDATED },
-    { url: "https://koli-ai.com/guides/hebrew-voice-bot", lastModified: CONTENT_UPDATED },
+    ...GUIDES.map((g) => ({ url: `https://koli-ai.com${g.href}`, lastModified: g.updated })),
     { url: "https://koli-ai.com/privacy", lastModified: UPDATED_ISO },
     { url: "https://koli-ai.com/terms", lastModified: UPDATED_ISO },
   ]
