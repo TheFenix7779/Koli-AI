@@ -1,8 +1,9 @@
 /**
  * Verbatim transcripts of the two sample recordings, as supplied. They are an
- * automatic transcription, so they contain recognition errors ("שירותי
- * אינסטלציה", "מערכות דנטליות"). They are deliberately not corrected: we do not
- * know what was actually said, and "fixing" it would be guessing.
+ * automatic transcription, so they contain recognition errors ("מערכות
+ * דנטליות"). They are deliberately not corrected: we do not know what was
+ * actually said, and "fixing" it would be guessing. The one exception is the
+ * short clip's 0:01 line, corrected by the team who made the recording.
  *
  * Speakers are not labelled in the source, so none are invented here.
  */
@@ -10,7 +11,7 @@ export type TranscriptLine = readonly [start: string, text: string]
 
 export const SHORT_TRANSCRIPT: readonly TranscriptLine[] = [
   ["0:00", "תרצה להגיע?"],
-  ["0:01", "האמת שאני גר ברמת השרון. איזה שירותי אינסטלציה."],
+  ["0:01", "האמת שאני גר ברמת השרון. איזה שירותים אתם מציעים?"],
   ["0:03", "רציתי לדעת אז אם אתה גר ברמת השרון הסניף הקרוב הוא ברחוב סוקולוב 34. אנחנו מציעים מגוון רחב של טיפולים כמו בדיקות שיניים, ניקוי אבנית, סתימות, הלבנת שיניים, יישור שיניים בשתלים דנטליים. האם יש טיפול ספציפי שמעניין אותך?"],
   ["0:21", "כן. תמיד רציתי לעשות הלבנת שיניים. את יכולה לספר לי על זה טיפה יותר? ברור."],
   ["0:26", "ציפויי חרסינה הם פתרון מצוין לשיפור מראה השיניים ולתיקון פגמים כמו סדקים."],
