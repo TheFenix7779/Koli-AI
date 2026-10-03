@@ -22,6 +22,33 @@ Use the same name, one-line description and phone everywhere:
 businesses; a profile needs either a place customers visit or a service area you
 travel to. Don't create one with a fake address — it gets suspended and can hurt.
 
+## 1b. Lists to get into (the fastest real backlinks)
+
+These Hebrew pages already rank and already list AI tools or AI-agent companies.
+Each one that adds Koli gives a link from a page Google and AI models already trust.
+Found 2026-10-03; check each page still exists before writing.
+
+| Page | Kind | Ask |
+|---|---|---|
+| [jonnystudio.co.il — כלי AI בעברית 2026](https://jonnystudio.co.il/%D7%9B%D7%9C%D7%99-ai-%D7%91%D7%A2%D7%91%D7%A8%D7%99%D7%AA-2026/) | Hebrew AI tools list | Add Koli under voice / customer service |
+| [aivo.co.il — טבלת דירוג כלי AI 2026](https://aivo.co.il/2026/01/08/%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%9C%D7%90-%D7%9C%D7%9B%D7%9C%D7%99-ai-%D7%91-2026-%D7%98%D7%91%D7%9C%D7%AA-%D7%94%D7%93%D7%99%D7%A8%D7%95%D7%92-%D7%94%D7%A8%D7%A9%D7%9E%D7%99/) | Ranking table | Add Koli as a Hebrew voice receptionist |
+| [stsiconic.com — סוכן AI לעסקים, מדריך השוואתי](https://stsiconic.com/ai-agent-comparison-guide-2026/) | "Fair comparison" of Israeli AI vendors | Be included in the next update |
+| [eyalmarcus.com — כלי AI מומלצים](https://eyalmarcus.com/ai-tools/) | Personal list | Long shot; offer a free setup for his own business so he can judge it |
+| [Globes — סוכן ה-AI הקולי](https://www.globes.co.il/news/article.aspx?did=1001531235) | News article on Hebrew voice agents | Not a link request: the journalist covers this beat, so send them the press pitch (section 2) |
+| [ynet — 10 כלי AI לבעלי עסקים](https://www.ynet.co.il/economy/article/b1ibw00yuyg) | News list | Same: pitch the writer for the next one |
+
+Request template (send from a personal address, edit the first line for each site):
+
+> שלום [שם],
+> קראתי את [שם הכתבה/הרשימה] — [משפט אמיתי אחד על מה שאהבת בה].
+> אנחנו בנינו את קולי AI, פקידת קבלה AI שעונה לטלפון ול־WhatsApp של עסקים קטנים בעברית ובכל שפה שהלקוח מדבר, וקובעת תורים ישירות ביומן. חשבתי שהיא יכולה להתאים ל[קטגוריה ברשימה].
+> אם זה רלוונטי, אשמח לתת לכם גישה לנסות אותה על העסק שלכם או לשלוח הקלטה של שיחה אמיתית. הפרטים: koli-ai.com
+> תודה, עדן
+
+**Don't pay for links.** Paid links that pass ranking credit break Google's spam
+policy and can get the site demoted. A paid listing is fine only if it's marked
+`sponsored`/`nofollow`, and then it brings visitors but no ranking.
+
 ## 2. Press pitch (Geektime, אנשים ומחשבים, כלכליסט טק)
 
 Send to one outlet at a time, personally, not as a blast. Geektime: [contact page](https://www.geektime.co.il/contact/).
