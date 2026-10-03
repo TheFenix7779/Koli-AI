@@ -56,6 +56,7 @@ export default function ComparePage() {
           { href: "/industries/medical-clinics", label: "מוקד קבלה AI לקליניקה" },
           { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי" },
           { href: "/guides/missed-calls", label: "שיחות שלא נענו בעסק" },
+          { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI בישראל" },
         ]}
       >
         <Section heading="מה זה מענה אנושי חיצוני">

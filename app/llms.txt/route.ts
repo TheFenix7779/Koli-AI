@@ -14,6 +14,8 @@ ${pages.join("\n")}
 
 ## מדריכים
 - [פקידת קבלה AI לעסקים](https://koli-ai.com/ai-receptionist): מה פקידת קבלה AI עושה, מה היא לא עושה, ואיך מתחילים
+- [שאלות ותשובות](https://koli-ai.com/faq): תשובות קצרות על שפות, WhatsApp, יומן, מחיר, פרטיות ומגבלות
+- [השוואת מזכירות AI בישראל](https://koli-ai.com/compare/ai-receptionist-israel): קולי, Genie, MR.BOT ומזכירה לפי מה שכל חברה מפרסמת, עם מקורות
 - [מי עומד מאחורי קולי AI](https://koli-ai.com/about): מי מפעיל את השירות, על אילו טכנולוגיות הוא בנוי ומה הוא לא עושה
 - [כמה עולה מזכירה וירטואלית AI](https://koli-ai.com/pricing): מה מרכיב את המחיר ואיך להשוות אותו לעלות המלאה של מזכירה
 - [מענה אנושי לעסקים מול מזכירה AI](https://koli-ai.com/compare/human-answering-service): השוואה בין מוקד מענה אנושי חיצוני למערכת AI

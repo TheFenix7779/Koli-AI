@@ -9,6 +9,8 @@ export const GUIDES = [
   { href: "/about", label: "מי עומד מאחורי קולי", updated: CONTENT_UPDATED },
   { href: "/pricing", label: "כמה זה עולה", updated: CONTENT_UPDATED },
   { href: "/compare/human-answering-service", label: "מענה אנושי מול AI", updated: CONTENT_UPDATED },
+  { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI", updated: "2026-10-03" },
+  { href: "/faq", label: "שאלות ותשובות", updated: "2026-10-03" },
   { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי", updated: CONTENT_UPDATED },
   { href: "/guides/hebrew-voice-bot", label: "בוט קולי בעברית", updated: CONTENT_UPDATED },
   { href: "/guides/missed-calls", label: "שיחות שלא נענו בעסק", updated: "2026-10-03" },

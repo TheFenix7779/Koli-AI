@@ -30,6 +30,7 @@ export default function PricingPage() {
         location="pricing"
         related={[
           { href: "/compare/human-answering-service", label: "מענה אנושי מול מזכירה AI" },
+          { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI בישראל" },
           { href: "/industries/dental-clinics", label: "מזכירה וירטואלית למרפאת שיניים" },
           { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי" },
         ]}

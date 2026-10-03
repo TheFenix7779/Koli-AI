@@ -21,6 +21,8 @@ export function Footer() {
 
           <nav aria-label="קישורים משפטיים" className="flex flex-wrap items-center gap-x-6 gap-y-2 text-body-sm text-cloud/70">
             <Link href="/ai-receptionist" className="transition-colors duration-200 hover:text-pure">פקידת קבלה AI</Link>
+            <Link href="/faq" className="transition-colors duration-200 hover:text-pure">שאלות ותשובות</Link>
+            <Link href="/compare/ai-receptionist-israel" className="transition-colors duration-200 hover:text-pure">השוואת מזכירות AI</Link>
             <Link href="/about" className="transition-colors duration-200 hover:text-pure">עלינו</Link>
             <Link href="/privacy" className="transition-colors duration-200 hover:text-pure">מדיניות פרטיות</Link>
             <Link href="/terms" className="transition-colors duration-200 hover:text-pure">תנאי שימוש</Link>
