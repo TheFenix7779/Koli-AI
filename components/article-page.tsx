@@ -106,6 +106,45 @@ export function Section({ heading, children }: { heading: string; children: Reac
   )
 }
 
+/**
+ * A short written example of a call, with a Hebrew translation under each line.
+ * The caption must say it is an illustration — these are not recordings.
+ */
+export function Dialogue({
+  caption,
+  lines,
+}: {
+  caption: string
+  lines: { who: string; text: string; lang: "he" | "ru" | "ar"; translation?: string }[]
+}) {
+  return (
+    <figure className="flex flex-col gap-4 rounded-cards border border-line bg-surface p-6">
+      <figcaption className="mono-label text-muted">{caption}</figcaption>
+      <ol className="flex flex-col gap-4">
+        {lines.map((l, i) => (
+          <li key={i} className="!ms-0 !list-none flex flex-col gap-1">
+            <span className="text-body-sm font-medium text-ink-2">{l.who}</span>
+            <span lang={l.lang} dir={l.lang === "ru" ? "ltr" : "rtl"} className="text-start text-ink">
+              {l.text}
+            </span>
+            {l.translation && <span className="text-body-sm text-muted">{l.translation}</span>}
+          </li>
+        ))}
+      </ol>
+    </figure>
+  )
+}
+
+/** A summary written in another language, marked up so browsers and crawlers read it as such. */
+export function InLanguage({ lang, heading, children }: { lang: "ru" | "ar"; heading: string; children: React.ReactNode }) {
+  return (
+    <section lang={lang} dir={lang === "ru" ? "ltr" : "rtl"} className="flex flex-col gap-4 rounded-cards border border-line p-6 text-start">
+      <h2 className="display-serif text-[26px] leading-tight text-ink sm:text-[32px]">{heading}</h2>
+      <div className="flex flex-col gap-4 text-body text-muted">{children}</div>
+    </section>
+  )
+}
+
 /** Article + breadcrumb JSON-LD, matching the graph nodes in the root layout. */
 export function articleJsonLd({
   title,
