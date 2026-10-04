@@ -16,7 +16,7 @@ Nothing here has been sent or submitted. Every item needs a person to do it.
 
 Use the same name, one-line description and phone everywhere:
 
-> **קולי AI** — פקידת קבלה AI שעונה לטלפון ול-WhatsApp של העסק 24/7, בכל שפה, וקובעת תורים ישירות ביומן. 055-564-8222 · koli-ai.com
+> **קולי AI (Koli AI)** — פקידת קבלה AI שעונה לטלפון ול-WhatsApp של העסק 24/7, בכל שפה, וקובעת תורים ישירות ביומן. 055-564-8222 · koli-ai.com
 
 **Google Business Profile:** probably not eligible. Google excludes online-only
 businesses; a profile needs either a place customers visit or a service area you

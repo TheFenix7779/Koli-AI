@@ -25,9 +25,9 @@ const robotoMono = Roboto_Mono({
   display: "swap",
 })
 
-const TITLE = "קולי AI — מזכירה וירטואלית ומוקד קבלה AI שעובד 24/7"
+const TITLE = "קולי AI (Koli AI) — מזכירה וירטואלית ומוקד קבלה AI 24/7"
 const DESCRIPTION =
-  "מזכירה וירטואלית AI שעונה לטלפון ול-WhatsApp בכל שפה, קובעת תורים ביומן ומתעדת כל שיחה. למרפאות שיניים, קליניקות, משרדי עורכי דין ועסקי שירות."
+  "מזכירה וירטואלית AI שעונה לטלפון ול-WhatsApp בכל שפה 24/7, קובעת תורים ביומן ומתעדת כל שיחה. למרפאות, עורכי דין, אינסטלטורים, חשמלאים ועסקי שירות."
 
 
 const JSON_LD = {
@@ -37,7 +37,8 @@ const JSON_LD = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "קולי AI",
-      alternateName: "Koli AI",
+      alternateName: ["Koli AI", "Koli"],
+      description: DESCRIPTION,
       url: SITE_URL,
       logo: `${SITE_URL}/logo`,
       telephone: "+972-55-564-8222",
@@ -56,6 +57,7 @@ const JSON_LD = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "קולי AI",
+      alternateName: "Koli AI",
       inLanguage: "he-IL",
       publisher: { "@id": `${SITE_URL}/#organization` },
     },

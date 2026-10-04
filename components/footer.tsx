@@ -14,7 +14,9 @@ export function Footer() {
               <Mic className="size-4" />
             </span>
             <div className="flex flex-col">
-              <span className="display-serif text-2xl leading-none text-pure">קולי AI</span>
+              <span className="display-serif text-2xl leading-none text-pure">
+                קולי AI · <span lang="en" className="ltr">Koli AI</span>
+              </span>
               <span className="text-body-sm text-cloud/70">הרצפציה החכמה של העסק שלך</span>
             </div>
           </div>
@@ -42,7 +44,7 @@ export function Footer() {
 
         <div className="flex items-center justify-between gap-4">
           <p className="mono-label text-cloud/55">
-            © <span className="ltr">2025</span> קולי AI. כל הזכויות שמורות.
+            © <span className="ltr">2025</span> קולי AI (Koli AI). כל הזכויות שמורות.
           </p>
           <Link
             href="/tools"
