@@ -143,8 +143,11 @@ export default function FaqPage() {
             <a href="/industries/medical-clinics">קליניקות רפואיות</a>,{" "}
             <a href="/industries/aesthetics-spa">קליניקות אסתטיקה וספא</a>,{" "}
             <a href="/industries/law-firms">משרדי עורכי דין</a>,{" "}
-            <a href="/industries/real-estate">סוכנויות נדל״ן</a> ו
-            <a href="/industries/pharmacies">בתי מרקחת</a>.
+            <a href="/industries/real-estate">סוכנויות נדל״ן</a>,{" "}
+            <a href="/industries/pharmacies">בתי מרקחת</a>, ולבעלי מקצוע:{" "}
+            <a href="/industries/plumbers">אינסטלטורים</a>,{" "}
+            <a href="/industries/electricians">חשמלאים</a> ו
+            <a href="/industries/leak-detection">מאתרי נזילות</a>.
           </p>
         </Section>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Smile, Stethoscope, Sparkles, Scale, Building2, Pill, Mic } from "lucide-react"
+import { Smile, Stethoscope, Sparkles, Scale, Building2, Pill, Droplets, Wrench, Zap, Mic } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Reveal } from "./reveal"
@@ -60,6 +60,33 @@ const INDUSTRIES = [
     tagline: "שעות פתיחה, זמינות תרופות ושאלות חוזרות — בלי לעצור את התור בדלפק.",
     asks: ["עד מתי אתם פתוחים?", "יש לכם את התרופה במלאי?", "אפשר להזמין מראש?"],
     reply: "אנחנו פתוחים היום עד 22:00. אבדוק זמינות ואחזור אליך בהודעה תוך דקות.",
+  },
+  {
+    id: "leaks",
+    slug: "leak-detection",
+    icon: Droplets,
+    name: "מאתרי נזילות",
+    tagline: "קריאות שירות, תיאום בדיקה ושאלות על מחיר — גם כשאתם על הגג עם מצלמה תרמית.",
+    asks: ["יש לי כתם רטוב בתקרה", "כמה עולה בדיקת נזילה?", "אתם נותנים דוח לביטוח?"],
+    reply: "אפשר לתאם בדיקה מחר ב־09:00. מה הכתובת, ובאיזה חדר רואים את הכתם?",
+  },
+  {
+    id: "plumber",
+    slug: "plumbers",
+    icon: Wrench,
+    name: "אינסטלטורים",
+    tagline: "סתימות, דוודים ותיאום הגעה — בלי לנגב ידיים כדי לענות לטלפון.",
+    asks: ["יש לי סתימה במטבח", "הדוד לא מחמם", "כמה עולה להגיע היום?"],
+    reply: "יש לי חלון היום בין 16:00 ל־18:00. מה הכתובת, ויש מים על הרצפה?",
+  },
+  {
+    id: "electrician",
+    slug: "electricians",
+    icon: Zap,
+    name: "חשמלאים",
+    tagline: "תקלות, התקנות וביקורים להצעת מחיר — מענה מסודר גם כשהידיים בתוך הלוח.",
+    asks: ["הפחת קופץ כל הזמן", "צריך להוסיף שקע במטבח", "יש ריח שרוף מהלוח"],
+    reply: "אם יש ריח שרוף, נתקו בבקשה את המפסק הראשי. אני מסמנת את זה כדחוף ומעבירה לחשמלאי עכשיו.",
   },
 ]
 

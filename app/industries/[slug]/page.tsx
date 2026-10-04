@@ -155,7 +155,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
             מה מגדירים לפני שמתחילים
           </h2>
           <p className="max-w-2xl text-body text-muted">
-            איכות המענה נקבעת כמעט כולה במידע שקולי מקבלת מראש. ב{industry.name} זה בדרך כלל אומר:
+            איכות המענה נקבעת כמעט כולה במידע שקולי מקבלת מראש. {industry.inPhrase ?? `ב${industry.name}`} זה בדרך כלל אומר:
           </p>
           <ul className="flex flex-col gap-3">
             {industry.setup.map((s) => (
