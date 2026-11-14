@@ -20,7 +20,7 @@ export function LegalPage({
     <>
       <header className="border-b border-line">
         <nav aria-label="ניווט ראשי" className="container-page flex h-16 items-center">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI — דף הבית">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית">
             <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
               <Mic className="size-4" />
             </span>

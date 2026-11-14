@@ -5,9 +5,9 @@ import { guideUpdated } from "@/lib/guides"
 import { INDUSTRIES } from "@/lib/industries"
 
 const PATH = "/ai-receptionist"
-const TITLE = "מזכירה מבוססת בינה מלאכותית (פקידת קבלה AI) לעסקים"
+const TITLE = "פקידת קבלה AI (AI Receptionist) לעסקים"
 const DESCRIPTION =
-  "מזכירה מבוססת בינה מלאכותית (AI Receptionist) עונה לטלפון ול-WhatsApp של העסק 24/7, קובעת תורים ישירות ביומן, עונה על שאלות קבועות בכל שפה ומעבירה לצוות את מה שדורש אדם. מה היא עושה, מה לא, ואיך מתחילים."
+  "פקידת קבלה AI (AI Receptionist) עונה לטלפון ול-WhatsApp של העסק 24/7, קובעת תורים ישירות ביומן, עונה על שאלות קבועות בכל שפה ומעבירה לצוות את מה שדורש אדם. מה היא עושה, מה לא, ואיך מתחילים."
 const UPDATED = guideUpdated(PATH)
 
 export const metadata: Metadata = {

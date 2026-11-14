@@ -3,9 +3,9 @@ import { ArticlePage, Section } from "@/components/article-page"
 import { PRIVACY_EMAIL } from "@/lib/legal"
 import { PHONE_DISPLAY } from "@/lib/contact"
 
-const TITLE = "מי עומד מאחורי קולי AI"
+const TITLE = "אודות: מי מפעיל את השירות ועל מה הוא בנוי"
 const DESCRIPTION =
-  "מי מפעיל את קולי AI, על אילו טכנולוגיות השירות בנוי, מה הוא עושה ומה הוא לא עושה, ואיך יוצרים איתנו קשר."
+  "מי מפעיל את השירות, על אילו טכנולוגיות השירות בנוי, מה הוא עושה ומה הוא לא עושה, ואיך יוצרים איתנו קשר."
 
 export const metadata: Metadata = {
   title: `${TITLE} | קולי AI`,
@@ -49,7 +49,7 @@ export default function AboutPage() {
       <ArticlePage
         eyebrow="עלינו"
         title={TITLE}
-        lead="קולי AI (באנגלית: Koli AI) היא מזכירה וירטואלית שעונה לטלפון ול-WhatsApp בשם העסק. הדף הזה מסביר מי מפעיל אותה, על מה היא בנויה ומה היא לא עושה — כדי שתדעו עם מי אתם מדברים לפני שאתם מחברים אותה לקו."
+        lead="קולי AI היא מזכירה וירטואלית שעונה לטלפון ול-WhatsApp בשם העסק. הדף הזה מסביר מי מפעיל אותה, על מה היא בנויה ומה היא לא עושה — כדי שתדעו עם מי אתם מדברים לפני שאתם מחברים אותה לקו."
         location="about"
         related={[
           { href: "/pricing", label: "כמה זה עולה" },

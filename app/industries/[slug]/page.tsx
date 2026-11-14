@@ -68,7 +68,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="border-b border-line bg-canvas/70">
         <nav aria-label="ניווט ראשי" className="container-page flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI — דף הבית">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית">
             <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
               <Mic className="size-4" />
             </span>
@@ -229,7 +229,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       <footer className="border-t border-line">
         <div className="container-page flex items-center justify-between py-8 text-body-sm text-muted">
           <Link href="/" className="hover:text-ink">
-            קולי AI
+            קולי AI (Koli AI)
           </Link>
           <PhoneLink location={`industry:${industry.slug}`} className="ltr font-mono tabular-nums hover:text-ink">
             {PHONE_DISPLAY}

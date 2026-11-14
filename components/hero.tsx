@@ -28,7 +28,7 @@ export function Hero() {
         <div className="flex flex-col items-start gap-8 lg:col-span-7">
           <span className="animate-fade-in mono-label flex items-center gap-3 text-muted opacity-0">
             <span aria-hidden className="animate-pulse-dot size-2 rounded-full bg-cyan-signal" />
-            קולי AI · מזכירה וירטואלית בכל שפה
+            קולי AI (Koli AI) · מזכירה וירטואלית מבוססת בינה מלאכותית
           </span>
 
           <h1

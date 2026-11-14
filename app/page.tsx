@@ -19,7 +19,7 @@ const JSON_LD = {
       "@type": "WebPage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: "קולי AI",
+      name: "קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית",
       inLanguage: "he-IL",
       dateModified: HOME_UPDATED,
       isPartOf: { "@id": `${SITE_URL}/#website` },

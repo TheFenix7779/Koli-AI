@@ -25,14 +25,14 @@ export function ArticlePage({
     <>
       <header className="border-b border-line">
         <nav aria-label="ניווט ראשי" className="container-page flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI — דף הבית">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית">
             <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
               <Mic className="size-4" />
             </span>
             <span className="display-serif text-2xl text-ink">קולי AI</span>
           </Link>
           <Link href="/" className="flex items-center gap-1.5 text-body text-muted transition-colors hover:text-ink">
-            לדף הבית <ArrowRight className="size-4 rotate-180" />
+            קולי AI — מזכירה וירטואלית מבוססת בינה מלאכותית <ArrowRight className="size-4 rotate-180" />
           </Link>
         </nav>
       </header>
@@ -79,7 +79,7 @@ export function ArticlePage({
       <footer className="border-t border-line">
         <div className="container-page flex items-center justify-between py-8 text-body-sm text-muted">
           <Link href="/" className="hover:text-ink">
-            קולי AI
+            קולי AI (Koli AI)
           </Link>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-ink">

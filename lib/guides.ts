@@ -6,7 +6,7 @@ import { CONTENT_UPDATED } from "./site"
  */
 export const GUIDES = [
   { href: "/ai-receptionist", label: "פקידת קבלה AI", updated: "2026-11-14" },
-  { href: "/about", label: "מי עומד מאחורי קולי", updated: CONTENT_UPDATED },
+  { href: "/about", label: "מי עומד מאחורי קולי", updated: "2026-11-14" },
   { href: "/pricing", label: "כמה זה עולה", updated: CONTENT_UPDATED },
   { href: "/compare/human-answering-service", label: "מענה אנושי מול AI", updated: CONTENT_UPDATED },
   { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI", updated: "2026-10-03" },
