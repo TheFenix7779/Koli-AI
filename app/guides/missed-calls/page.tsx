@@ -39,6 +39,8 @@ export default function MissedCallsGuide() {
         lead="רוב העסקים יודעים שהם מפספסים שיחות, אבל מעט מאוד יודעים כמה. הדף הזה מסביר איך לספור אותן, למה הן מתפספסות, ומה אפשר לעשות — מהפתרון החינמי ועד מענה מלא מסביב לשעון."
         location="guide-missed-calls"
         related={[
+          { href: "/missed-calls-calculator", label: "מחשבון שיחות שלא נענו" },
+          { href: "/guides/ai-phone-answering", label: "מענה טלפוני AI" },
           { href: "/compare/human-answering-service", label: "מענה אנושי מול מזכירה AI" },
           { href: "/pricing", label: "כמה עולה מזכירה וירטואלית AI" },
           { href: "/industries/dental-clinics", label: "מזכירה וירטואלית למרפאת שיניים" },

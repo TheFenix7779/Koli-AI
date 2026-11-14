@@ -1,0 +1,302 @@
+import type { Metadata } from "next"
+import { ArticlePage, Section, articleJsonLd } from "@/components/article-page"
+import { guideUpdated } from "@/lib/guides"
+
+const PATH = "/guides/ai-phone-answering"
+const TITLE = "מענה טלפוני AI לעסקים — מה זה, איך זה עובד ואיך בוחרים"
+const DESCRIPTION =
+  "מענה טלפוני AI הוא מערכת שעונה לשיחות של העסק בקול, 24/7, וקובעת תורים ביומן. מה היא עושה, במה היא שונה ממזכירה, ממענה אנושי ומתא קולי, ואילו שאלות כדאי לשאול לפני שבוחרים."
+const UPDATED = guideUpdated(PATH)
+
+const FAQ: [string, string][] = [
+  [
+    "מה זה מענה טלפוני AI?",
+    "מערכת שעונה לשיחות נכנסות של העסק בשיחה חופשית, בלי תפריטים ובלי ללחוץ ספרות. היא מבינה מה הפונה רוצה, עונה על שאלות נפוצות, קובעת תור ביומן ומתעדת כל שיחה.",
+  ],
+  [
+    "במה מענה טלפוני AI שונה מתא קולי?",
+    "תא קולי מקליט הודעה ומחכה שמישהו יחזור. מענה טלפוני AI מנהל שיחה בזמן אמת, ויכול לסגור את העניין עצמו, למשל לקבוע תור, כשהפונה עדיין על הקו.",
+  ],
+  [
+    "האם הוא עונה גם מחוץ לשעות הפעילות?",
+    "כן. המערכת עובדת 24/7, כולל לילות, סופי שבוע וחגים, וגם כשכל העובדים תפוסים בשיחה אחרת.",
+  ],
+  [
+    "האם אפשר לקבל מענה גם ב־WhatsApp?",
+    "בקולי AI כן: הטלפון וה־WhatsApp הם אותה מערכת. בשירותים אחרים זה משתנה, ולכן כדאי לבדוק את זה בטבלת ההשוואה.",
+  ],
+  [
+    "באילו שפות הוא עונה?",
+    "תלוי בשירות. קולי AI מזהה את השפה שהפונה מדבר ועוברת אליה, כולל עברית, אנגלית, ערבית ורוסית.",
+  ],
+  [
+    "האם הפונה יודע שהוא מדבר עם מערכת?",
+    "כן. המערכת מודיעה בתחילת השיחה שמדובר בעוזרת אוטומטית ושהשיחה מוקלטת.",
+  ],
+  [
+    "במה זה שונה ממערכת IVR של \"לחצו 1\"?",
+    "ב־IVR הפונה נאלץ להתאים את עצמו לתפריט קבוע. במענה טלפוני AI הוא מדבר חופשי, והמערכת מבינה את הבקשה בניסוח שלו, שואלת שאלת המשך אם צריך ומבצעת פעולה.",
+  ],
+  [
+    "מה קורה כשהמערכת לא יודעת לענות?",
+    "מערכת טובה מזהה שהיא מחוץ לתחום ומעבירה את העניין לאדם עם סיכום של מה שנאמר, ולא מנחשת. כדאי לבדוק את זה בשיחת ניסיון לפני שבוחרים.",
+  ],
+  [
+    "מי צריך מענה טלפוני AI יותר מאחרים?",
+    "עסקים שמקבלים הרבה שיחות ושכל שיחה בהם שווה הרבה: מרפאות וקליניקות, ובעלי מקצוע שנמצאים בשטח כשהטלפון מצלצל. אפשר לחשב את העלות בעסק שלכם במחשבון שיחות שלא נענו.",
+  ],
+  [
+    "מתי לא כדאי להשתמש בו?",
+    "בשיחות רגישות רגשית, בהכרעות מקצועיות ובכל מצב חירום. מענה טלפוני AI אינו שירות חירום, ובמצב חירום רפואי מחייגים 101.",
+  ],
+]
+
+export const metadata: Metadata = {
+  title: `${TITLE} | קולי AI`,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
+  openGraph: { type: "article", locale: "he_IL", url: PATH, siteName: "קולי AI", title: TITLE, description: DESCRIPTION },
+}
+
+export default function AiPhoneAnsweringGuide() {
+  const base = articleJsonLd({
+    title: TITLE,
+    description: DESCRIPTION,
+    path: PATH,
+    section: "מדריך",
+    published: "2026-11-14",
+    modified: UPDATED,
+  })
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            ...base,
+            "@graph": [
+              ...base["@graph"],
+              {
+                "@type": "FAQPage",
+                inLanguage: "he-IL",
+                mainEntity: FAQ.map(([q, a]) => ({
+                  "@type": "Question",
+                  name: q,
+                  acceptedAnswer: { "@type": "Answer", text: a },
+                })),
+              },
+            ],
+          }),
+        }}
+      />
+      <ArticlePage
+        eyebrow="מדריך"
+        title={TITLE}
+        lead="מענה טלפוני AI הוא מערכת שעונה לטלפון של העסק במקומכם, בקול ובשיחה חופשית, בכל שעה. הדף הזה מסביר מה היא עושה בפועל, במה היא שונה מהחלופות, ומה כדאי לבדוק לפני שבוחרים שירות."
+        location="guide-ai-phone-answering"
+        related={[
+          { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI בישראל" },
+          { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי" },
+          { href: "/guides/missed-calls", label: "שיחות שלא נענו בעסק" },
+          { href: "/missed-calls-calculator", label: "מחשבון שיחות שלא נענו" },
+          { href: "/pricing", label: "כמה עולה מזכירה וירטואלית AI" },
+        ]}
+      >
+        <Section heading="התשובה הקצרה">
+          <p>
+            <strong>
+              מענה טלפוני AI עונה לשיחות נכנסות בשיחה טבעית, עונה על שאלות נפוצות, קובע תורים
+              ביומן ומתעד כל פנייה, 24 שעות ביממה.
+            </strong>{" "}
+            הוא מחליף את הרגע שבו הטלפון מצלצל ואף אחד לא פנוי: הפונה לא מגיע לתא קולי, אלא מקבל
+            מענה.
+          </p>
+        </Section>
+
+        <Section heading="במה זה שונה מתא קולי ומ־IVR">
+          <p>
+            <strong>תא קולי</strong> מקליט הודעה ומחכה שמישהו יחזור. <strong>IVR</strong> הוא תפריט
+            של &quot;לחצו 1 לתורים, לחצו 2 לשעות&quot;, והפונה צריך להתאים את עצמו אליו.{" "}
+            <strong>מענה טלפוני AI</strong> מנהל שיחה: הפונה אומר מה הוא רוצה במילים שלו, והמערכת
+            מבינה, שואלת מה שחסר ופועלת, למשל קובעת את התור בזמן שהוא עוד על הקו.
+          </p>
+        </Section>
+
+        <Section heading="מה המערכת עושה בשיחה">
+          <ul className="flex flex-col gap-2">
+            <li>
+              <strong>זמינות מלאה.</strong> עונה 24/7, בלי זמן המתנה, גם כשכולם תפוסים.
+            </li>
+            <li>
+              <strong>קביעה ושינוי של תורים.</strong> בודקת את היומן, מציעה זמנים פנויים ורושמת את
+              התור בזמן השיחה. היומן יכול להיות Google Calendar או יומן ו־CRM שכבר בשימוש.
+            </li>
+            <li>
+              <strong>מענה על שאלות חוזרות.</strong> שעות פעילות, כתובת, שירותים והכנות לטיפול,
+              על סמך מה שהעסק הגדיר מראש.
+            </li>
+            <li>
+              <strong>קליטת פניות ולידים.</strong> שם, טלפון, סיבת הפנייה ורמת דחיפות, כשזוהתה.
+            </li>
+            <li>
+              <strong>תיעוד.</strong> כל שיחה נשמרת עם סיכום, כדי שבעל העסק יראה מה קרה בלי
+              להאזין להקלטה.
+            </li>
+            <li>
+              <strong>כמה שפות.</strong> קולי AI מזהה את שפת הפונה ועוברת אליה: עברית, אנגלית,
+              ערבית, רוסית ועוד.
+            </li>
+          </ul>
+          <p>
+            איך שיחה כזאת נשמעת אפשר לשמוע בדף{" "}
+            <a href="/guides/ai-voice-agent">מה זה סוכן AI קולי</a>, שכולל הקלטה מלאה ותמלול שלה.
+          </p>
+        </Section>
+
+        <Section heading="מענה טלפוני AI מול החלופות">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[560px] border-collapse text-body-sm">
+              <thead>
+                <tr className="border-b border-line-2 text-ink">
+                  <th scope="col" className="py-3 pe-4 text-start font-medium">
+                    &nbsp;
+                  </th>
+                  <th scope="col" className="py-3 pe-4 text-start font-medium">
+                    מענה טלפוני AI
+                  </th>
+                  <th scope="col" className="py-3 pe-4 text-start font-medium">
+                    מזכירה או מוקד אנושי
+                  </th>
+                  <th scope="col" className="py-3 pe-4 text-start font-medium">
+                    תא קולי
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {(
+                  [
+                    ["זמינות", "24/7", "שעות עבודה, או תוספת עלות ללילות", "24/7, אבל רק להשאיר הודעה"],
+                    ["שיחות במקביל", "כמה שיחות באותו זמן", "שיחה אחת לכל נציג", "לא רלוונטי"],
+                    ["קביעת תור בזמן השיחה", "כן, מול היומן", "כן", "לא"],
+                    ["שיקול דעת בשיחה מורכבת", "מוגבל; מעבירה לאדם", "גבוה", "אין"],
+                    ["תיעוד של כל שיחה", "אוטומטי, עם סיכום", "תלוי בנציג", "הקלטה בלבד"],
+                  ] as const
+                ).map(([label, ...cells]) => (
+                  <tr key={label} className="border-b border-line align-top">
+                    <th scope="row" className="py-3 pe-4 text-start font-normal text-ink-2">
+                      {label}
+                    </th>
+                    {cells.map((c) => (
+                      <td key={c} className="py-3 pe-4">
+                        {c}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-body-sm">
+            השוואה מפורטת מול שירות מענה אנושי נמצאת ב
+            <a href="/compare/human-answering-service">מענה אנושי לעסקים מול מזכירה AI</a>.
+          </p>
+        </Section>
+
+        <Section heading="למי זה מתאים">
+          <p>
+            <strong>
+              הכי הרבה ערך יש בעסקים עם הרבה שיחות נכנסות ושווי גבוה ללקוח אחד.
+            </strong>{" "}
+            מרפאות וקליניקות הן הדוגמה הברורה: הרבה פניות, ומטופל חדש שלא קיבל מענה קובע תור
+            במקום אחר. אותו דבר בבעלי מקצוע כמו אינסטלטורים וחשמלאים, שנמצאים בשטח כשהטלפון
+            מצלצל ושכל שיחה אצלם היא עבודה. גם במספרות וטיפוח שיחה שלא נענית היא תור שהולך
+            למישהו אחר. כמה זה עולה לכם אפשר לחשב ב<a href="/missed-calls-calculator">מחשבון
+            שיחות שלא נענו</a> או לפי <a href="/guides/missed-calls">המדריך</a>.
+          </p>
+        </Section>
+
+        <Section heading="איך מתחילים">
+          <ol className="flex flex-col gap-2">
+            <li>
+              <strong>מגדירים מה המערכת יודעת.</strong> שעות, כתובת, שירותים ותשובות לשאלות
+              שחוזרות. זה החלק שקובע את איכות המענה יותר מכל דבר אחר.
+            </li>
+            <li>
+              <strong>מחברים את הטלפון.</strong> מספר ייעודי, או הפניה מהקו הקיים בשעות שבוחרים,
+              למשל רק כשאף אחד לא עונה.
+            </li>
+            <li>
+              <strong>מחברים את היומן ומגדירים העברה לאדם.</strong> Google Calendar או היומן וה־CRM
+              שכבר בשימוש, וכללים למתי להעביר, למי ומה לעשות כשאף אחד לא זמין.
+            </li>
+          </ol>
+          <p>
+            הצעד הראשון הוא <a href="/ai-receptionist">שיחת היכרות קצרה</a>, בלי התחייבות.
+          </p>
+        </Section>
+
+        <Section heading="מתי זה לא משתלם">
+          <ul className="flex flex-col gap-2">
+            <li>
+              <strong>כשכמעט לא מתקשרים אליכם.</strong> אם מגיעות מעט שיחות בשבוע, רוב הערך אובד.
+              ספרו קודם כמה שיחות אתם מפספסים ב<a href="/missed-calls-calculator">מחשבון</a>.
+            </li>
+            <li>
+              <strong>כשכל שיחה דורשת מומחה.</strong> אם כל פנייה היא ייעוץ מקצועי ארוך, המערכת
+              תעביר כמעט הכל לאדם.
+            </li>
+          </ul>
+        </Section>
+
+        <Section heading="מה לבדוק לפני שבוחרים שירות">
+          <ul className="flex flex-col gap-2">
+            <li>
+              <strong>שיחת ניסיון בעברית אמיתית</strong>, עם שם עסק, שם משפחה ותאריך, ולא רק הדגמה
+              מוכנה. צ&apos;קליסט מלא יש ב<a href="/guides/hebrew-voice-bot">בוט קולי בעברית</a>.
+            </li>
+            <li>
+              <strong>חיבור ליומן שאתם משתמשים בו</strong>, לא רק &quot;קביעת תורים&quot; באופן כללי.
+            </li>
+            <li>
+              <strong>מה קורה כשהמערכת לא יודעת</strong>: האם היא מעבירה לאדם, ועם איזה סיכום.
+            </li>
+            <li>
+              <strong>המחיר המלא</strong>: חבילה לפי דקות, חריגות, הקמה וחיבורים. מה לשאול מפורט ב
+              <a href="/pricing">כמה עולה מזכירה וירטואלית AI</a>.
+            </li>
+            <li>
+              <strong>WhatsApp ושפות</strong>, אם יש לכם לקוחות שפונים בהן.
+            </li>
+          </ul>
+          <p>
+            כדי להשוות שירותים בישראל לפי מה שכל חברה מפרסמת, ראו את{" "}
+            <a href="/compare/ai-receptionist-israel">השוואת מזכירות AI בישראל</a>.
+          </p>
+        </Section>
+
+        <Section heading="איפה זה לא מתאים">
+          <p>
+            שיחות ארוכות שדורשות שיקול דעת, שיחות רגישות רגשית והכרעות מקצועיות צריכות אדם, והמערכת
+            מעבירה אותן הלאה. <strong>מענה טלפוני AI אינו שירות חירום</strong>; במצב חירום רפואי
+            מחייגים 101. הפרטים ב<a href="/terms">תנאי השימוש</a>.
+          </p>
+        </Section>
+
+        <Section heading="שאלות נפוצות">
+          <dl className="flex flex-col gap-5">
+            {FAQ.map(([q, a]) => (
+              <div key={q}>
+                <dt className="font-medium text-ink">{q}</dt>
+                <dd className="mt-1">{a}</dd>
+              </div>
+            ))}
+          </dl>
+          <p>
+            רוצים לשמוע איך זה נשמע על העסק שלכם? <a href="/ai-receptionist">פקידת קבלה AI לעסקים</a>{" "}
+            מסבירה איך מתחילים.
+          </p>
+        </Section>
+      </ArticlePage>
+    </>
+  )
+}
