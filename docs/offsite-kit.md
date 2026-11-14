@@ -114,3 +114,16 @@ To get into that set (none of this is in code):
 - Ask the sites above that run comparison or "best tools" posts to include Koli, with the sourced comparison page as the reference.
 - Pitch The Times of Israel business/tech desks once the clinic case study is cleared.
 - Keep the wording identical everywhere: "מזכירה מבוססת בינה מלאכותית (AI Receptionist) — קולי AI".
+
+### Times of Israel blogs: read before using
+
+blogs.timesofisrael.com is open to applicants (form at
+timesofisrael.com/contact/become-times-of-israel-blogger/), and a post there is
+one of the sources Google's AI Overview quoted. But the application page says it
+does not permit "content that is essentially marketing in nature (SEO, backlink,
+content marketing, industry blogs)", the blog must carry the author's own name,
+and Hebrew posts are not mentioned. A product comparison written by a vendor got
+published and cited, but a Koli promotional post would break the stated rule.
+Only apply with a genuine, disclosed first-person piece (for example what
+missed-call data shows for clinics), expect rejection, and do not treat it as an
+ad slot.

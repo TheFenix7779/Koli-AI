@@ -10,7 +10,7 @@ export const GUIDES = [
   { href: "/pricing", label: "כמה זה עולה", updated: CONTENT_UPDATED },
   { href: "/compare/human-answering-service", label: "מענה אנושי מול AI", updated: CONTENT_UPDATED },
   { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI", updated: "2026-10-03" },
-  { href: "/faq", label: "שאלות ותשובות", updated: "2026-10-03" },
+  { href: "/faq", label: "שאלות ותשובות", updated: "2026-11-14" },
   { href: "/guides/ai-phone-answering", label: "מענה טלפוני AI", updated: "2026-11-14" },
   { href: "/guides/whatsapp-ai-bot", label: "בוט וואטסאפ עם AI", updated: "2026-11-14" },
   { href: "/missed-calls-calculator", label: "מחשבון שיחות שלא נענו", updated: "2026-11-14" },

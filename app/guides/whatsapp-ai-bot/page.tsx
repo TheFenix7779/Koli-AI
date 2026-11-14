@@ -60,21 +60,7 @@ export default function WhatsAppAiBotGuide() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            ...base,
-            "@graph": [
-              ...base["@graph"],
-              {
-                "@type": "FAQPage",
-                inLanguage: "he-IL",
-                mainEntity: FAQ.map(([q, a]) => ({
-                  "@type": "Question",
-                  name: q,
-                  acceptedAnswer: { "@type": "Answer", text: a },
-                })),
-              },
-            ],
-          }),
+          __html: JSON.stringify(base),
         }}
       />
       <ArticlePage

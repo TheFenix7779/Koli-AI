@@ -10,6 +10,10 @@ const UPDATED = guideUpdated(PATH)
 
 const FAQ: [string, string][] = [
   [
+    "יש מזכירה קולית AI לקביעת תורים בישראל?",
+    "כן. מזכירה קולית AI עונה לשיחות בעברית, קובעת ומשנה תורים ביומן ומתעדת כל שיחה. קולי AI עושה זאת גם ב־WhatsApp, ומתאימה בין היתר למרפאות. אפשר לשמוע הקלטות דוגמה באתר ולראות אותה עובדת על העסק שלכם בשיחת היכרות חינם.",
+  ],
+  [
     "מה זה מענה טלפוני AI?",
     "מערכת מבוססת בינה מלאכותית שעונה לשיחות נכנסות של העסק בשיחה חופשית, בלי תפריטים ובלי ללחוץ ספרות. היא מבינה מה הפונה רוצה, עונה על שאלות נפוצות, קובעת תור ביומן ומתעדת כל שיחה.",
   ],
@@ -72,21 +76,7 @@ export default function AiPhoneAnsweringGuide() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            ...base,
-            "@graph": [
-              ...base["@graph"],
-              {
-                "@type": "FAQPage",
-                inLanguage: "he-IL",
-                mainEntity: FAQ.map(([q, a]) => ({
-                  "@type": "Question",
-                  name: q,
-                  acceptedAnswer: { "@type": "Answer", text: a },
-                })),
-              },
-            ],
-          }),
+          __html: JSON.stringify(base),
         }}
       />
       <ArticlePage
