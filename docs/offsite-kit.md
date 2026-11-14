@@ -100,3 +100,17 @@ study needs their permission and these answers:
 - A one-sentence quote, in their own words, from the owner or office manager.
 
 Send the answers and I'll build `/case-studies/<clinic>` from them.
+
+
+## 6. What Google's AI Overview cited (screenshots, 2026-11-14)
+
+For "מזכירה מבוססת בינה מלאכותית" and "מענה AI 24/7 ללקוחות לעסק" the AI Overview
+quoted third-party pages, not only the vendors' own sites. Cited or ranking:
+getgenie.co.il, whale.co.il, Capterra Israel, Juba Digital, The Times of Israel,
+kishurit.co.il, mo-o.co.il, archi-tech.co.il, async.co.il, intevia.ai.
+
+To get into that set (none of this is in code):
+- Create a vendor listing on Capterra Israel (free) with the same one-line description as the homepage.
+- Ask the sites above that run comparison or "best tools" posts to include Koli, with the sourced comparison page as the reference.
+- Pitch The Times of Israel business/tech desks once the clinic case study is cleared.
+- Keep the wording identical everywhere: "מזכירה מבוססת בינה מלאכותית (AI Receptionist) — קולי AI".

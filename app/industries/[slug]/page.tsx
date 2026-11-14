@@ -24,7 +24,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const industry = getIndustry((await params).slug)
   if (!industry) return {}
-  const title = `${industry.forPhrase} | קולי AI`
+  const title = `${industry.forPhrase} — בינה מלאכותית, מענה 24/7 | קולי AI`
   const url = `/industries/${industry.slug}`
   return {
     title,

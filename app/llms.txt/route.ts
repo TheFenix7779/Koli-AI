@@ -20,6 +20,7 @@ ${pages.join("\n")}
 - [כמה עולה מזכירה וירטואלית AI](https://koli-ai.com/pricing): מה מרכיב את המחיר ואיך להשוות אותו לעלות המלאה של מזכירה
 - [מענה אנושי לעסקים מול מזכירה AI](https://koli-ai.com/compare/human-answering-service): השוואה בין מוקד מענה אנושי חיצוני למערכת AI
 - [מענה טלפוני AI לעסקים](https://koli-ai.com/guides/ai-phone-answering): מה מערכת מענה טלפוני AI עושה, במה היא שונה ממזכירה ומתא קולי, ומה לבדוק לפני שבוחרים
+- [בוט וואטסאפ עם בינה מלאכותית לעסק](https://koli-ai.com/guides/whatsapp-ai-bot): שלוש רמות של מענה אוטומטי בוואטסאפ, מה בוט עם AI עושה ומה לבדוק לפני שבוחרים
 - [מחשבון שיחות שלא נענו](https://koli-ai.com/missed-calls-calculator): כלי חינמי שמתרגם שיחות שלא נענו להכנסה שאובדת בחודש ובשנה, לפי המספרים של העסק
 - [מה זה סוכן AI קולי](https://koli-ai.com/guides/ai-voice-agent): איך עובדת שיחה קולית מבוססת AI, ואיפה היא לא מתאימה
 - [בוט קולי בעברית](https://koli-ai.com/guides/hebrew-voice-bot): צ'קליסט לבדיקת בוט קולי לפני חיבור לקו

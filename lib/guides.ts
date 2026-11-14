@@ -5,15 +5,16 @@ import { CONTENT_UPDATED } from "./site"
  * date that page's copy last changed — bump it when you edit the page.
  */
 export const GUIDES = [
-  { href: "/ai-receptionist", label: "פקידת קבלה AI", updated: "2026-10-03" },
+  { href: "/ai-receptionist", label: "פקידת קבלה AI", updated: "2026-11-14" },
   { href: "/about", label: "מי עומד מאחורי קולי", updated: CONTENT_UPDATED },
   { href: "/pricing", label: "כמה זה עולה", updated: CONTENT_UPDATED },
   { href: "/compare/human-answering-service", label: "מענה אנושי מול AI", updated: CONTENT_UPDATED },
   { href: "/compare/ai-receptionist-israel", label: "השוואת מזכירות AI", updated: "2026-10-03" },
   { href: "/faq", label: "שאלות ותשובות", updated: "2026-10-03" },
   { href: "/guides/ai-phone-answering", label: "מענה טלפוני AI", updated: "2026-11-14" },
+  { href: "/guides/whatsapp-ai-bot", label: "בוט וואטסאפ עם AI", updated: "2026-11-14" },
   { href: "/missed-calls-calculator", label: "מחשבון שיחות שלא נענו", updated: "2026-11-14" },
-  { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי", updated: CONTENT_UPDATED },
+  { href: "/guides/ai-voice-agent", label: "מה זה סוכן AI קולי", updated: "2026-11-14" },
   { href: "/guides/hebrew-voice-bot", label: "בוט קולי בעברית", updated: CONTENT_UPDATED },
   { href: "/guides/missed-calls", label: "שיחות שלא נענו בעסק", updated: "2026-10-03" },
   { href: "/guides/russian-phone-answering", label: "מענה טלפוני ברוסית", updated: "2026-10-03" },
