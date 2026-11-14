@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Check, Copy, Phone, RefreshCw } from "lucide-react"
-import { CATEGORIES, CITIES, LEADS, telHref, type CallStatus, type Outcome } from "@/lib/leads"
+import { CATEGORIES, CITIES, LEADS, PITCHES, telHref, type Pitch, type CallStatus, type Outcome } from "@/lib/leads"
 
 type LeadStatus = { dialed: boolean; outcome: Outcome | null; callbackDate: string | null }
 type StatusMap = Record<string, LeadStatus>
@@ -16,6 +16,22 @@ const FILTERS: { value: Filter; label: string }[] = [
   { value: "not_closed", label: "Not closed" },
   { value: "callback_due", label: "Callback due" },
 ]
+
+type PitchFilter = "all" | "site" | "ai"
+const PITCH_FILTERS: { value: PitchFilter; label: string }[] = [
+  { value: "all", label: "Any pitch" },
+  { value: "site", label: "Website first" },
+  { value: "ai", label: "Receptionist first" },
+]
+
+const STATE_LABEL: Record<Pitch["state"], string> = {
+  none: "No website",
+  dead: "Site is dead",
+  old: "Old site",
+  dated: "Dated site",
+  modern: "Site looks fine",
+  unverified: "Site not checked",
+}
 
 const EMPTY: LeadStatus = { dialed: false, outcome: null, callbackDate: null }
 
@@ -34,6 +50,8 @@ export function CallTracker() {
   const [category, setCategory] = useState("")
   const [city, setCity] = useState("")
   const [filter, setFilter] = useState<Filter>("all")
+  const [pitchFilter, setPitchFilter] = useState<PitchFilter>("all")
+  const [easiestFirst, setEasiestFirst] = useState(false)
 
   const load = useCallback(async () => {
     try {
@@ -133,6 +151,7 @@ export function CallTracker() {
     return LEADS.filter((lead) => {
       if (category && lead.category !== category) return false
       if (city && lead.city !== city) return false
+      if (pitchFilter !== "all" && PITCHES[lead.id]?.first !== pitchFilter) return false
 
       const s = statuses[lead.phone] ?? EMPTY
       if (filter === "dialed" && !s.dialed) return false
@@ -147,9 +166,12 @@ export function CallTracker() {
       }
       return true
     })
-  }, [query, category, city, filter, statuses])
+  }, [query, category, city, filter, pitchFilter, statuses])
 
   const sortedVisible = useMemo(() => {
+    if (easiestFirst && filter !== "callback_due") {
+      return [...visible].sort((a, b) => (PITCHES[b.id]?.prio ?? 0) - (PITCHES[a.id]?.prio ?? 0) || a.id - b.id)
+    }
     if (filter !== "callback_due") return visible
     // Soonest callback first.
     return [...visible].sort((a, b) => {
@@ -157,7 +179,7 @@ export function CallTracker() {
       const db = statuses[b.phone]?.callbackDate ?? ""
       return da.localeCompare(db)
     })
-  }, [visible, filter, statuses])
+  }, [visible, filter, easiestFirst, statuses])
 
   const pct = (n: number) => (stats.total ? Math.round((n / stats.total) * 100) : 0)
   const closeRate = stats.dialed ? Math.round((stats.closed / stats.dialed) * 100) : 0
@@ -224,6 +246,29 @@ export function CallTracker() {
               {f.label}
             </button>
           ))}
+          <span className="mx-1 h-5 w-px bg-line" />
+          {PITCH_FILTERS.map((f) => (
+            <button
+              key={f.value}
+              onClick={() => setPitchFilter(f.value)}
+              className={`rounded-full px-3 py-1 text-[13px] transition-colors duration-200 ${
+                pitchFilter === f.value
+                  ? "bg-accent text-void"
+                  : "border border-line text-muted hover:text-ink"
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+          <label className="flex items-center gap-1.5 text-[13px] text-muted">
+            <input
+              type="checkbox"
+              checked={easiestFirst}
+              onChange={(e) => setEasiestFirst(e.target.checked)}
+              className="size-4 accent-[var(--c-accent)]"
+            />
+            Easiest sell first
+          </label>
           <button
             onClick={resetAll}
             className="ms-auto rounded-buttons border border-orchid-bloom/40 px-3 py-1.5 text-[13px] text-orchid-bloom transition-colors duration-200 hover:bg-orchid-bloom/10"
@@ -248,6 +293,7 @@ export function CallTracker() {
               <Th className="w-12">#</Th>
               <Th>Business</Th>
               <Th className="w-44">Phone</Th>
+              <Th className="w-56">Pitch</Th>
               <Th className="w-24">Rating</Th>
               <Th className="w-20">Dialed</Th>
               <Th className="w-52">Outcome</Th>
@@ -306,6 +352,10 @@ export function CallTracker() {
                     </div>
                   </td>
 
+                  <td className="px-3 py-3">
+                    <PitchCell pitch={PITCHES[lead.id]} />
+                  </td>
+
                   <td className="px-3 py-3 text-[13px] text-muted tabular-nums">
                     {lead.rating != null ? `★ ${lead.rating} (${lead.reviews})` : "—"}
                   </td>
@@ -354,7 +404,7 @@ export function CallTracker() {
             })}
             {sortedVisible.length === 0 ? (
               <tr>
-                <td colSpan={7} className="bg-surface px-3 py-10 text-center text-muted">
+                <td colSpan={8} className="bg-surface px-3 py-10 text-center text-muted">
                   No leads match these filters.
                 </td>
               </tr>
@@ -363,6 +413,23 @@ export function CallTracker() {
         </table>
       </div>
     </section>
+  )
+}
+
+function PitchCell({ pitch }: { pitch?: Pitch }) {
+  if (!pitch) return <span className="text-faint">—</span>
+  const first = pitch.first === "site" ? "Free demo website" : "AI receptionist"
+  const then = pitch.first === "site" ? "AI receptionist" : "Free demo website"
+  return (
+    <div className="flex flex-col gap-0.5 text-[12px]">
+      <span className="text-[13px] font-medium text-ink">1. {first}</span>
+      <span className="text-muted">2. {then}</span>
+      <span className="text-faint">
+        {STATE_LABEL[pitch.state]}
+        {pitch.why ? ` — ${pitch.why}` : ""}
+      </span>
+      <span className="text-faint">Call-handling need: {pitch.fit}</span>
+    </div>
   )
 }
 
