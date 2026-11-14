@@ -9,9 +9,16 @@ import type { NextConfig } from "next"
 // rendering. The remaining directives still remove the payoff from most
 // injection bugs: no framing, no plugins, no rewriting <base>, no posting form
 // data off-origin.
+// Next's dev-mode HMR runtime evaluates strings, so development needs
+// 'unsafe-eval'. @vercel/analytics also pulls its debug script from
+// va.vercel-scripts.com in dev, where production serves the same file
+// same-origin from /_vercel/insights. Neither belongs in the shipped header.
+const DEV = process.env.NODE_ENV === "development"
+const DEV_SCRIPT = DEV ? " 'unsafe-eval' https://va.vercel-scripts.com" : ""
+
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${DEV_SCRIPT}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",
