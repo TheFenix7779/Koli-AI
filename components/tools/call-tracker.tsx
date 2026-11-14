@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Check, Copy, Phone, RefreshCw } from "lucide-react"
-import { CATEGORIES, CITIES, LEADS, PITCHES, telHref, type Pitch, type CallStatus, type Outcome } from "@/lib/leads"
+import { telHref, type Lead, type Pitch, type CallStatus, type Outcome } from "@/lib/leads"
 
 type LeadStatus = { dialed: boolean; outcome: Outcome | null; callbackDate: string | null }
 type StatusMap = Record<string, LeadStatus>
@@ -41,6 +41,10 @@ function today() {
 }
 
 export function CallTracker() {
+  const [leads, setLeads] = useState<Lead[]>([])
+  const [PITCHES, setPitches] = useState<Record<string, Pitch>>({})
+  const [CATEGORIES, setCategories] = useState<string[]>([])
+  const [CITIES, setCities] = useState<string[]>([])
   const [statuses, setStatuses] = useState<StatusMap>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -69,6 +73,20 @@ export function CallTracker() {
     } finally {
       setLoading(false)
     }
+  }, [])
+
+  // The lead list is served behind the login, not bundled into the page JS.
+  useEffect(() => {
+    fetch("/api/tools/leads", { cache: "no-store" })
+      .then(async (res) => {
+        const data = await res.json()
+        if (!res.ok) throw new Error(data.error ?? "Failed to load leads")
+        setLeads(data.leads)
+        setPitches(data.pitches)
+        setCategories(data.categories)
+        setCities(data.cities)
+      })
+      .catch((e) => setError(e instanceof Error ? e.message : "Failed to load leads"))
   }, [])
 
   // Poll and refetch on focus so several people calling at once stay in sync.
@@ -136,19 +154,19 @@ export function CallTracker() {
     let dialed = 0
     let closed = 0
     let notClosed = 0
-    for (const lead of LEADS) {
+    for (const lead of leads) {
       const s = statuses[lead.phone]
       if (!s) continue
       if (s.dialed) dialed++
       if (s.outcome === "closed") closed++
       if (s.outcome === "not_closed") notClosed++
     }
-    return { dialed, closed, notClosed, total: LEADS.length }
-  }, [statuses])
+    return { dialed, closed, notClosed, total: leads.length }
+  }, [leads, statuses])
 
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase()
-    return LEADS.filter((lead) => {
+    return leads.filter((lead) => {
       if (category && lead.category !== category) return false
       if (city && lead.city !== city) return false
       if (pitchFilter !== "all" && PITCHES[lead.id]?.first !== pitchFilter) return false
@@ -166,7 +184,7 @@ export function CallTracker() {
       }
       return true
     })
-  }, [query, category, city, filter, pitchFilter, statuses])
+  }, [leads, PITCHES, query, category, city, filter, pitchFilter, statuses])
 
   const sortedVisible = useMemo(() => {
     if (easiestFirst && filter !== "callback_due") {
@@ -179,7 +197,7 @@ export function CallTracker() {
       const db = statuses[b.phone]?.callbackDate ?? ""
       return da.localeCompare(db)
     })
-  }, [visible, filter, easiestFirst, statuses])
+  }, [visible, PITCHES, filter, easiestFirst, statuses])
 
   const pct = (n: number) => (stats.total ? Math.round((n / stats.total) * 100) : 0)
   const closeRate = stats.dialed ? Math.round((stats.closed / stats.dialed) * 100) : 0

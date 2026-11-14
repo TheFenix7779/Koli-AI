@@ -1,5 +1,3 @@
-import raw from "./leads.json"
-import pitchData from "./lead-pitches.json"
 
 export type Lead = {
   id: number
@@ -32,8 +30,6 @@ export type CallStatus = {
   updated_at: string
 }
 
-export const LEADS = raw as Lead[]
-
 /**
  * Which product to pitch first, from scanning each lead's website
  * (lib/lead-pitches.json, keyed by lead id). The other product is the fallback.
@@ -49,21 +45,10 @@ export type Pitch = {
   /** 1-6: how easy the sell looks. Higher first. */
   prio: number
 }
-export const PITCHES = pitchData as unknown as Record<string, Pitch>
-
-/** Leads whose listed number rings the owner directly -- work these first. */
-export const DIRECT_DIAL = LEADS.filter((l) => l.gatekeeper === false)
-
 /** The number to actually dial: a self-published mobile beats the front desk. */
 export function dialNumber(lead: Lead) {
   return lead.mobile ?? lead.phone
 }
-
-/** Front-desk leads where we know who to ask for. */
-export const ASK_FOR_BY_NAME = LEADS.filter((l) => l.gatekeeper && l.owner)
-
-export const CATEGORIES = [...new Set(LEADS.map((l) => l.category))].filter(Boolean).sort()
-export const CITIES = [...new Set(LEADS.map((l) => l.city))].filter(Boolean).sort()
 
 /** tel: links need the digits only. */
 export function telHref(phone: string) {
