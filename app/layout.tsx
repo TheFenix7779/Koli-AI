@@ -40,7 +40,7 @@ const JSON_LD = {
       alternateName: ["Koli AI", "Koli"],
       description: DESCRIPTION,
       url: SITE_URL,
-      logo: `${SITE_URL}/logo`,
+      logo: `${SITE_URL}/koli-logo-static.png`,
       telephone: "+972-55-564-8222",
       contactPoint: [
         {

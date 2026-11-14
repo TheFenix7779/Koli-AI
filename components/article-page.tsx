@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Mic, MessageCircle, ArrowRight } from "lucide-react"
+import { LogoMark } from "@/components/logo-mark"
+import { MessageCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { WhatsAppLink } from "@/components/contact-link"
 import { CONTENT_UPDATED } from "@/lib/site"
@@ -26,9 +27,7 @@ export function ArticlePage({
       <header className="border-b border-line">
         <nav aria-label="ניווט ראשי" className="container-page flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
-              <Mic className="size-4" />
-            </span>
+            <LogoMark />
             <span className="display-serif text-2xl text-ink">קולי AI</span>
           </Link>
           <Link href="/" className="flex items-center gap-1.5 text-body text-muted transition-colors hover:text-ink">

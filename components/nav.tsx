@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { LogoMark } from "@/components/logo-mark"
 import Link from "next/link"
-import { Menu, X, Mic, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { GUIDES } from "@/lib/guides"
 import { ThemeToggle } from "./theme-toggle"
@@ -91,9 +92,7 @@ export function Nav() {
           className="container-page flex h-16 items-center justify-between gap-6"
         >
           <a href="#hero" className="flex items-center gap-2.5" aria-label="קולי AI — דף הבית">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
-              <Mic className="size-4" />
-            </span>
+            <LogoMark />
             <span className="display-serif text-2xl text-ink">קולי AI</span>
           </a>
 

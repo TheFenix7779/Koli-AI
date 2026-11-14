@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Lock, Mic } from "lucide-react"
+import { LogoMark } from "@/components/logo-mark"
+import { Lock } from "lucide-react"
 import { INDUSTRIES } from "@/lib/industries"
 import { PhoneLink } from "@/components/contact-link"
 import { PHONE_DISPLAY } from "@/lib/contact"
@@ -10,9 +11,7 @@ export function Footer() {
       <div className="container-page flex flex-col gap-10 py-14">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-pure text-void">
-              <Mic className="size-4" />
-            </span>
+            <LogoMark />
             <div className="flex flex-col">
               <span className="display-serif text-2xl leading-none text-pure">
                 קולי AI · <span lang="en" className="ltr">Koli AI</span>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mic } from "lucide-react"
+import { LogoMark } from "@/components/logo-mark"
 import { PHONE_DISPLAY } from "@/lib/contact"
 import { PhoneLink } from "@/components/contact-link"
 
@@ -21,9 +21,7 @@ export function LegalPage({
       <header className="border-b border-line">
         <nav aria-label="ניווט ראשי" className="container-page flex h-16 items-center">
           <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
-              <Mic className="size-4" />
-            </span>
+            <LogoMark />
             <span className="display-serif text-2xl text-ink">קולי AI</span>
           </Link>
         </nav>

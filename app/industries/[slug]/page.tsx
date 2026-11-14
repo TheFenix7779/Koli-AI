@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
+import { LogoMark } from "@/components/logo-mark"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { MessageCircle, Mic, ArrowRight } from "lucide-react"
+import { MessageCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { INDUSTRIES, getIndustry } from "@/lib/industries"
 import { PhoneLink, WhatsAppLink } from "@/components/contact-link"
@@ -69,9 +70,7 @@ export default async function IndustryPage({ params }: { params: Promise<Params>
       <header className="border-b border-line bg-canvas/70">
         <nav aria-label="ניווט ראשי" className="container-page flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5" aria-label="קולי AI (Koli AI) — מזכירה וירטואלית מבוססת בינה מלאכותית">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-action text-action-ink">
-              <Mic className="size-4" />
-            </span>
+            <LogoMark />
             <span className="display-serif text-2xl text-ink">קולי AI</span>
           </Link>
           <Link href="/#industries" className="flex items-center gap-1.5 text-body text-muted transition-colors hover:text-ink">
