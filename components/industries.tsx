@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Smile, Stethoscope, Sparkles, Scale, Building2, Pill, Droplets, Wrench, Zap, Mic } from "lucide-react"
+import { Smile, Stethoscope, Sparkles, Scale, Building2, Pill, Droplets, Wrench, Zap, UtensilsCrossed, Mic } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Reveal } from "./reveal"
@@ -24,6 +24,15 @@ const INDUSTRIES = [
     tagline: "מיון פניות, קביעת תורים והפניה לרופא הנכון — כבר מהשיחה הראשונה.",
     asks: ["תור לרופא עור", "האם אתם עובדים עם הקופה שלי?", "Можно записаться?"],
     reply: "אפנה אותך לד״ר כהן. הפנוי הקרוב הוא יום רביעי ב־11:00. מתאים?",
+  },
+  {
+    id: "restaurant",
+    slug: "restaurants",
+    icon: UtensilsCrossed,
+    name: "מסעדות ובתי קפה",
+    tagline: "הזמנת שולחנות, שאלות על תפריט ואלרגנים ופניות אירועים — מארחת שלא נתפסת בשעת העומס.",
+    asks: ["שולחן לארבעה היום בשמונה", "יש מנות טבעוניות? אני אלרגית לאגוזים", "Do you have a table for two?"],
+    reply: "יש לי שולחן לארבעה היום ב־20:00 בפנים. רשמתי את האלרגיה לאגוזים — על איזה שם להזמין?",
   },
   {
     id: "spa",
