@@ -28,7 +28,7 @@ const SITE_URL = "https://koli-ai.com"
 const PATH = "/industries/restaurants"
 const industry = getIndustry("restaurants")
 
-const TITLE = "מארחת דיגיטלית למסעדה — מענה טלפוני והזמנת שולחנות 24/7 | קולי AI"
+const TITLE = "מארחת דיגיטלית למסעדה | קולי AI"
 
 export const metadata: Metadata = industry
   ? {
