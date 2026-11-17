@@ -4,11 +4,11 @@ import { useEffect, useState } from "react"
 import { PhoneIncoming, CalendarCheck2, FileSpreadsheet, MailCheck, Mic } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-type Step =
+export type CallStep =
   | { kind: "caller" | "koli"; text: string }
   | { kind: "event"; text: string; icon: "calendar" | "sheet" | "mail" }
 
-const SCRIPT: Step[] = [
+const DEFAULT_SCRIPT: CallStep[] = [
   { kind: "caller", text: "שלום, אני רוצה לקבוע תור לניקוי אבנית." },
   { kind: "koli", text: "בשמחה! יש לי זמינות ביום שלישי ב־14:30 או ביום חמישי ב־10:00. מה נוח לך?" },
   { kind: "caller", text: "שלישי בבקשה." },
@@ -23,7 +23,15 @@ const SCRIPT: Step[] = [
 const ICONS = { calendar: CalendarCheck2, sheet: FileSpreadsheet, mail: MailCheck }
 const BARS = [22, 40, 58, 34, 66, 48, 30, 54, 42, 62, 28, 46]
 
-export function LiveCall({ className }: { className?: string }) {
+export function LiveCall({
+  className,
+  script: SCRIPT = DEFAULT_SCRIPT,
+  callerLabel = "מרפאת שיניים",
+}: {
+  className?: string
+  script?: CallStep[]
+  callerLabel?: string
+}) {
   const [count, setCount] = useState(0)
   const [seconds, setSeconds] = useState(0)
   const [reduced, setReduced] = useState(false)
@@ -59,7 +67,7 @@ export function LiveCall({ className }: { className?: string }) {
       clearTimeout(timer)
       clearInterval(clock)
     }
-  }, [])
+  }, [SCRIPT])
 
   const visible = SCRIPT.slice(0, count)
   const nextStep = SCRIPT[count]
@@ -84,7 +92,7 @@ export function LiveCall({ className }: { className?: string }) {
           </span>
           <div className="flex flex-col leading-tight">
             <span className="text-body-sm font-medium text-cloud">שיחה נכנסת</span>
-            <span className="text-xs text-ash">מרפאת שיניים · 055-••• ••••</span>
+            <span className="text-xs text-ash">{callerLabel} · 055-••• ••••</span>
           </div>
         </div>
         <span className="ltr font-mono text-sm tabular-nums text-cloud">

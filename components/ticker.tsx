@@ -10,8 +10,8 @@ const ITEMS = [
   "התראות לצוות",
 ]
 
-export function Ticker() {
-  const row = [...ITEMS, ...ITEMS]
+export function Ticker({ items = ITEMS }: { items?: string[] }) {
+  const row = [...items, ...items]
   return (
     <div
       aria-hidden

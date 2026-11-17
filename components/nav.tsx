@@ -9,11 +9,11 @@ import { GUIDES } from "@/lib/guides"
 import { ThemeToggle } from "./theme-toggle"
 
 const LINKS = [
-  { label: "יום עם קולי", href: "#day" },
-  { label: "יכולות", href: "#capabilities" },
-  { label: "למי זה מתאים", href: "#industries" },
+  { label: "יום עם קולי", href: "/#day" },
+  { label: "יכולות", href: "/#capabilities" },
+  { label: "למי זה מתאים", href: "/#industries" },
   { label: "מסעדות", href: "/industries/restaurants" },
-  { label: "שאלות", href: "#faq" },
+  { label: "שאלות", href: "/#faq" },
 ]
 
 /** Desktop dropdown for the guide and pricing pages. */
@@ -92,7 +92,7 @@ export function Nav() {
           aria-label="ניווט ראשי"
           className="container-page flex h-16 items-center justify-between gap-6"
         >
-          <a href="#hero" className="flex items-center gap-2.5" aria-label="קולי AI — דף הבית">
+          <a href="/" className="flex items-center gap-2.5" aria-label="קולי AI — דף הבית">
             <LogoMark />
             <span className="display-serif text-2xl text-ink">קולי AI</span>
           </a>

@@ -19,7 +19,8 @@ const INDUSTRY_GUIDES = GUIDES.filter((g) =>
 type Params = { slug: string }
 
 export function generateStaticParams() {
-  return INDUSTRIES.map((i) => ({ slug: i.slug }))
+  // /industries/restaurants has its own full landing page (app/industries/restaurants).
+  return INDUSTRIES.filter((i) => i.slug !== "restaurants").map((i) => ({ slug: i.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
