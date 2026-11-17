@@ -12,6 +12,7 @@ const LINKS = [
   { label: "יום עם קולי", href: "#day" },
   { label: "יכולות", href: "#capabilities" },
   { label: "למי זה מתאים", href: "#industries" },
+  { label: "מסעדות", href: "/industries/restaurants" },
   { label: "שאלות", href: "#faq" },
 ]
 
